@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 400px;
+            height: 400px;
+            background-color: #ccc;
+            position: relative;
+            margin: 100px auto;
+            /* 使用3d一定要设置 透视 才能让3的转换有立体感 */
+            /* perspective: 1000px; */
+            /* 如果想让盒子里面的子盒子在立体空间显示要给父元素设置 3d盒子 */
+            /* 这个时候盒子已经是3d空间透视 自带透视 */
+            transform-style: preserve-3d;
+            /* transform: rotateX(45deg) rotateY(45deg) ; */
+            /* 现在box需要动画 给box调用动画 */
+            animation: zhuan 5s infinite alternate;
+            transform-origin: left center;
+        }
+
+        .box div {
+            position: absolute;
+            text-align: center;
+            color: #000;
+            transition: all 1s;
+            width: 400px;
+            height: 400px;
+        }
+
+        .left {
+            left: 0;
+            top: 0;
+            border: 2px solid red;
+            background-color: rgba(255, 0, 0, 0.3);
+            /* transform: rotateY(30deg); */
+            /* 左边的门绕着左边的中心点旋转 */
+            transform-origin: left center;
+            transform: rotateY(90deg);
+
+        }
+
+        .right {
+            right: 0;
+            top: 0;
+            border: 2px solid green;
+            /* 右边的门绕着右边的中心点旋转 */
+            transform-origin: right center;
+            transform: rotateY(-90deg);
+            background-color: rgba(0, 255, 0, 0.3);
+        }
+
+        .top {
+            right: 0;
+            top: 0;
+            border: 2px solid yellow;
+            /* 上面的绕着上面旋转 */
+            transform-origin: center top;
+            transform: rotateX(-90deg);
+            background-color: rgba(255, 255, 0, 0.3);
+        }
+
+        .bottom {
+            right: 0;
+            bottom: 0;
+            border: 2px solid pink;
+            /* 下面的绕着下面旋转 */
+            transform-origin: center bottom;
+            transform: rotateX(90deg);
+            background-color: rgba(255, 0, 242, 0.3);
+        }
+
+        .box .home {
+            background-color: rgba(255, 255, 0, 0.3);
+            border: 2px solid yellow;
+            /* 前面只要里面眼睛越近 越近translateZ 正值越大越近 */
+            transform: translateZ(0px);
+        }
+
+        .box .end {
+            background-color: rgba(255, 0, 255, 0.3);
+            border: 2px solid purple;
+            /* 前面只要里面眼睛越近 越近translateZ 正值越大越近  整个盒子的高度400px 离屏幕远400px  */
+            transform: translateZ(-400px);
+        }
+
+        /* 定义了立方体的动画 从0 没有旋转到 100%旋转了360度 */
+        @keyframes zhuan {
+            0% {
+                transform: rotateX(0) rotateY(0);
+            }
+
+            0% {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left">
+            左边
+        </div>
+        <div class="right">
+            右边
+        </div>
+        <div class="top">
+            上面
+        </div>
+        <div class="bottom">
+            下面
+        </div>
+        <!-- 前面 在整个盒子最前面 -->
+        <div class="home">
+            前面
+        </div>
+        <!-- 后面再平面的后面 -->
+        <div class="end">
+            后面
+        </div>
+    </div>
+</body>
+
+</html>

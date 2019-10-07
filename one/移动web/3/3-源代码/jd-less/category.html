@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 1. 移动端页面第一步就要加视口 推荐使用完整视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>京东分类页面</title>
+    <!-- 2. 引入当前分类页面的css -->
+    <link rel="stylesheet" href="./less/category.css">
+</head>
+
+<body>
+    <!-- 分为上中下3个区域
+    上下高度固定 中间高度自适应 -->
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="left">
+            <!-- 返回图标 -->
+            <a href="#" class="icon-back"></a>
+        </div>
+        <div class="center">
+            <form action="#">
+                <i class="icon-search"></i>
+                <input type="search" placeholder="请输入要搜索的商品">
+            </form>
+        </div>
+        <div class="right">
+            <a href="#" class="icon-menu"></a>
+        </div>
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <!-- 分类左侧 -->
+        <div class="category-left">
+
+            <ul>
+                <li class="active"><a href="javascript:void(0);">热门推荐</a></li>
+                <li><a href="javascript:void(0);">手机数码</a></li>
+                <li><a href="javascript:void(0);">家用电器</a></li>
+                <li><a href="javascript:void(0);">电脑办公</a></li>
+                <li><a href="javascript:void(0);">计生情趣</a></li>
+                <li><a href="javascript:void(0);">美妆护肤</a></li>
+                <li><a href="javascript:void(0);">个护清洁</a></li>
+                <li><a href="javascript:void(0);">汽车用品</a></li>
+                <li><a href="javascript:void(0);">京东超市</a></li>
+                <li><a href="javascript:void(0);">男装</a></li>
+                <li><a href="javascript:void(0);">男鞋</a></li>
+                <li><a href="javascript:void(0);">女装</a></li>
+                <li><a href="javascript:void(0);">女鞋</a></li>
+                <li><a href="javascript:void(0);">母婴童装</a></li>
+                <li><a href="javascript:void(0);">运动户外</a></li>
+                <li><a href="javascript:void(0);">内衣配饰</a></li>
+                <li><a href="javascript:void(0);">食品生鲜</a></li>
+                <li><a href="javascript:void(0);">酒水饮料</a></li>
+                <li><a href="javascript:void(0);">家具家装</a></li>
+                <li><a href="javascript:void(0);">家居厨具</a></li>
+                <li><a href="javascript:void(0);">箱包手袋</a></li>
+                <li><a href="javascript:void(0);">钟表珠宝</a></li>
+                <li><a href="javascript:void(0);">图书音像</a></li>
+                <li><a href="javascript:void(0);">玩具乐器</a></li>
+                <li><a href="javascript:void(0);">医药保健</a></li>
+                <li><a href="javascript:void(0);">宠物生活</a></li>
+                <li><a href="javascript:void(0);">礼品鲜花</a></li>
+                <li><a href="javascript:void(0);">农资绿植</a></li>
+                <li><a href="javascript:void(0);">生活旅行</a></li>
+                <li><a href="javascript:void(0);">奢侈品</a></li>
+                <li><a href="javascript:void(0);">全球购</a></li>
+                <li><a href="javascript:void(0);">国际名牌</a></li>
+                <li><a href="javascript:void(0);">艺术邮币</a></li>
+                <li><a href="javascript:void(0);">二手商品</a></li>
+                <li><a href="javascript:void(0);">特产馆</a></li>
+                <li><a href="javascript:void(0);">京东金融</a></li>
+                <li><a href="javascript:void(0);">拍卖</a></li>
+                <li><a href="javascript:void(0);">房产</a></li>
+            </ul>
+        </div>
+        <!-- 分类的右侧 -->
+        <div class="category-right">
+            <!-- 广告图片 -->
+            <a href="#" class="banner">
+                <img src="https://img20.360buyimg.com/mcoss/jfs/t1/17970/5/1976/51492/5c189253E07d143ed/5df8a82661807e7f.png"
+                    alt="">
+            </a>
+            <!-- 品牌列表 -->
+            <div class="branch-list">
+                <div class="title">
+                    <h4>热门品牌</h4>
+                </div>
+                <div class="content">
+                    <ul class="jd-category-style-1">
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E5%B0%8F%E7%B1%B3&amp;PTAG=137886.1.2504&amp;searchFrom=category"><img
+                                    src="https://img30.360buyimg.com/focus/s140x140_jfs/t13411/188/926813276/3945/a4f47292/5a1692eeN105a64b4.png"
+                                    id="Imglazyload162"><span>小米</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E5%8D%8E%E4%B8%BA&amp;PTAG=137886.1.2506&amp;searchFrom=category"><img
+                                    src="https://img14.360buyimg.com/focus/s140x140_jfs/t11929/135/2372293765/1396/e103ec31/5a1692e2Nbea6e136.jpg"
+                                    id="Imglazyload163"><span>华为</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E8%8D%A3%E8%80%80&amp;PTAG=137886.1.2505&amp;searchFrom=category"><img
+                                    src="https://img10.360buyimg.com/focus/s140x140_jfs/t12178/348/911080073/4732/db0ad9c7/5a1692e2N6df7c609.jpg"
+                                    id="Imglazyload164"><span>荣耀</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=iPhone&amp;PTAG=137886.1.2503&amp;searchFrom=category"><img
+                                    src="https://img20.360buyimg.com/focus/s140x140_jfs/t13759/194/897734755/2493/1305d4c4/5a1692ebN8ae73077.jpg"
+                                    id="Imglazyload165"><span>iPhone</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=vivo&amp;PTAG=137886.1.2513&amp;searchFrom=category"><img
+                                    src="https://img11.360buyimg.com/focus/s140x140_jfs/t11014/359/2341377211/2777/1755c29c/5a169244Nff0179e0.png"
+                                    id="Imglazyload166"><span>vivo</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=OPPO&amp;PTAG=137886.1.2510&amp;searchFrom=category"><img
+                                    src="https://img13.360buyimg.com/focus/s140x140_jfs/t13036/273/932026474/2570/a3517c7d/5a169254N4bbbd9fb.png"
+                                    id="Imglazyload167"><span>OPPO</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E9%AD%85%E6%97%8F&amp;PTAG=137886.1.2508&amp;searchFrom=category"><img
+                                    src="https://img20.360buyimg.com/focus/s140x140_jfs/t12820/326/909017718/7138/68cde747/5a169243N40eca33c.jpg"
+                                    id="Imglazyload168"><span>魅族</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E4%B8%89%E6%98%9F&amp;PTAG=137886.1.2509&amp;searchFrom=category"><img
+                                    src="https://img13.360buyimg.com/focus/s140x140_jfs/t11509/131/2348573811/3425/4f20fe6/5a16925aN8a6dfd03.png"
+                                    id="Imglazyload169"><span>三星</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E4%B8%80%E5%8A%A0&amp;PTAG=137886.1.2514&amp;searchFrom=category"><img
+                                    src="https://img13.360buyimg.com/focus/s140x140_jfs/t11209/71/2351231464/4158/fc0c415c/5a16923fNfc14307e.jpg"
+                                    id="Imglazyload170"><span>一加</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=360%E6%89%8B%E6%9C%BA&amp;PTAG=137886.1.2511&amp;searchFrom=category"><img
+                                    src="https://img20.360buyimg.com/focus/s140x140_jfs/t13096/309/908035611/5138/5558f001/5a16924fNeac7677e.jpg"
+                                    id="Imglazyload171"><span>360手机</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=锤子手机&amp;PTAG=137886.1.2507&amp;searchFrom=category"><img
+                                    src="https://img20.360buyimg.com/focus/s140x140_jfs/t19387/332/664528115/8176/5eabe8cb/5a9fa5e0N6754e52a.jpg"
+                                    id="Imglazyload172"><span>锤子手机</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=努比亚手机&amp;PTAG=137886.1.2512&amp;searchFrom=category"><img
+                                    src="https://img12.360buyimg.com/focus/s140x140_jfs/t15085/289/2395028996/2546/1e7e1f7b/5a9fa5e7Nc5cc0f6b.jpg"
+                                    id="Imglazyload173"><span>努比亚</span></a></li>
+                        <div style="clear:both"></div>
+                    </ul>
+                </div>
+                <div class="title">
+                    <h4>热门品牌</h4>
+                </div>
+                <div class="content">
+                    <ul class="jd-category-style-1">
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E5%B0%8F%E7%B1%B3&amp;PTAG=137886.1.2504&amp;searchFrom=category"><img
+                                    src="https://img30.360buyimg.com/focus/s140x140_jfs/t13411/188/926813276/3945/a4f47292/5a1692eeN105a64b4.png"
+                                    id="Imglazyload162"><span>小米</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E5%8D%8E%E4%B8%BA&amp;PTAG=137886.1.2506&amp;searchFrom=category"><img
+                                    src="https://img14.360buyimg.com/focus/s140x140_jfs/t11929/135/2372293765/1396/e103ec31/5a1692e2Nbea6e136.jpg"
+                                    id="Imglazyload163"><span>华为</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E8%8D%A3%E8%80%80&amp;PTAG=137886.1.2505&amp;searchFrom=category"><img
+                                    src="https://img10.360buyimg.com/focus/s140x140_jfs/t12178/348/911080073/4732/db0ad9c7/5a1692e2N6df7c609.jpg"
+                                    id="Imglazyload164"><span>荣耀</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=iPhone&amp;PTAG=137886.1.2503&amp;searchFrom=category"><img
+                                    src="https://img20.360buyimg.com/focus/s140x140_jfs/t13759/194/897734755/2493/1305d4c4/5a1692ebN8ae73077.jpg"
+                                    id="Imglazyload165"><span>iPhone</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=vivo&amp;PTAG=137886.1.2513&amp;searchFrom=category"><img
+                                    src="https://img11.360buyimg.com/focus/s140x140_jfs/t11014/359/2341377211/2777/1755c29c/5a169244Nff0179e0.png"
+                                    id="Imglazyload166"><span>vivo</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=OPPO&amp;PTAG=137886.1.2510&amp;searchFrom=category"><img
+                                    src="https://img13.360buyimg.com/focus/s140x140_jfs/t13036/273/932026474/2570/a3517c7d/5a169254N4bbbd9fb.png"
+                                    id="Imglazyload167"><span>OPPO</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E9%AD%85%E6%97%8F&amp;PTAG=137886.1.2508&amp;searchFrom=category"><img
+                                    src="https://img20.360buyimg.com/focus/s140x140_jfs/t12820/326/909017718/7138/68cde747/5a169243N40eca33c.jpg"
+                                    id="Imglazyload168"><span>魅族</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E4%B8%89%E6%98%9F&amp;PTAG=137886.1.2509&amp;searchFrom=category"><img
+                                    src="https://img13.360buyimg.com/focus/s140x140_jfs/t11509/131/2348573811/3425/4f20fe6/5a16925aN8a6dfd03.png"
+                                    id="Imglazyload169"><span>三星</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E4%B8%80%E5%8A%A0&amp;PTAG=137886.1.2514&amp;searchFrom=category"><img
+                                    src="https://img13.360buyimg.com/focus/s140x140_jfs/t11209/71/2351231464/4158/fc0c415c/5a16923fNfc14307e.jpg"
+                                    id="Imglazyload170"><span>一加</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=360%E6%89%8B%E6%9C%BA&amp;PTAG=137886.1.2511&amp;searchFrom=category"><img
+                                    src="https://img20.360buyimg.com/focus/s140x140_jfs/t13096/309/908035611/5138/5558f001/5a16924fNeac7677e.jpg"
+                                    id="Imglazyload171"><span>360手机</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=锤子手机&amp;PTAG=137886.1.2507&amp;searchFrom=category"><img
+                                    src="https://img20.360buyimg.com/focus/s140x140_jfs/t19387/332/664528115/8176/5eabe8cb/5a9fa5e0N6754e52a.jpg"
+                                    id="Imglazyload172"><span>锤子手机</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=努比亚手机&amp;PTAG=137886.1.2512&amp;searchFrom=category"><img
+                                    src="https://img12.360buyimg.com/focus/s140x140_jfs/t15085/289/2395028996/2546/1e7e1f7b/5a9fa5e7Nc5cc0f6b.jpg"
+                                    id="Imglazyload173"><span>努比亚</span></a></li>
+                        <div style="clear:both"></div>
+                    </ul>
+                </div>
+                <div class="title">
+                    <h4>热门品牌</h4>
+                </div>
+                <div class="content">
+                    <ul class="jd-category-style-1">
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E5%B0%8F%E7%B1%B3&amp;PTAG=137886.1.2504&amp;searchFrom=category"><img
+                                    src="https://img30.360buyimg.com/focus/s140x140_jfs/t13411/188/926813276/3945/a4f47292/5a1692eeN105a64b4.png"
+                                    id="Imglazyload162"><span>小米</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E5%8D%8E%E4%B8%BA&amp;PTAG=137886.1.2506&amp;searchFrom=category"><img
+                                    src="https://img14.360buyimg.com/focus/s140x140_jfs/t11929/135/2372293765/1396/e103ec31/5a1692e2Nbea6e136.jpg"
+                                    id="Imglazyload163"><span>华为</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E8%8D%A3%E8%80%80&amp;PTAG=137886.1.2505&amp;searchFrom=category"><img
+                                    src="https://img10.360buyimg.com/focus/s140x140_jfs/t12178/348/911080073/4732/db0ad9c7/5a1692e2N6df7c609.jpg"
+                                    id="Imglazyload164"><span>荣耀</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=iPhone&amp;PTAG=137886.1.2503&amp;searchFrom=category"><img
+                                    src="https://img20.360buyimg.com/focus/s140x140_jfs/t13759/194/897734755/2493/1305d4c4/5a1692ebN8ae73077.jpg"
+                                    id="Imglazyload165"><span>iPhone</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=vivo&amp;PTAG=137886.1.2513&amp;searchFrom=category"><img
+                                    src="https://img11.360buyimg.com/focus/s140x140_jfs/t11014/359/2341377211/2777/1755c29c/5a169244Nff0179e0.png"
+                                    id="Imglazyload166"><span>vivo</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=OPPO&amp;PTAG=137886.1.2510&amp;searchFrom=category"><img
+                                    src="https://img13.360buyimg.com/focus/s140x140_jfs/t13036/273/932026474/2570/a3517c7d/5a169254N4bbbd9fb.png"
+                                    id="Imglazyload167"><span>OPPO</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E9%AD%85%E6%97%8F&amp;PTAG=137886.1.2508&amp;searchFrom=category"><img
+                                    src="https://img20.360buyimg.com/focus/s140x140_jfs/t12820/326/909017718/7138/68cde747/5a169243N40eca33c.jpg"
+                                    id="Imglazyload168"><span>魅族</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E4%B8%89%E6%98%9F&amp;PTAG=137886.1.2509&amp;searchFrom=category"><img
+                                    src="https://img13.360buyimg.com/focus/s140x140_jfs/t11509/131/2348573811/3425/4f20fe6/5a16925aN8a6dfd03.png"
+                                    id="Imglazyload169"><span>三星</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=%E4%B8%80%E5%8A%A0&amp;PTAG=137886.1.2514&amp;searchFrom=category"><img
+                                    src="https://img13.360buyimg.com/focus/s140x140_jfs/t11209/71/2351231464/4158/fc0c415c/5a16923fNfc14307e.jpg"
+                                    id="Imglazyload170"><span>一加</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=360%E6%89%8B%E6%9C%BA&amp;PTAG=137886.1.2511&amp;searchFrom=category"><img
+                                    src="https://img20.360buyimg.com/focus/s140x140_jfs/t13096/309/908035611/5138/5558f001/5a16924fNeac7677e.jpg"
+                                    id="Imglazyload171"><span>360手机</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=锤子手机&amp;PTAG=137886.1.2507&amp;searchFrom=category"><img
+                                    src="https://img20.360buyimg.com/focus/s140x140_jfs/t19387/332/664528115/8176/5eabe8cb/5a9fa5e0N6754e52a.jpg"
+                                    id="Imglazyload172"><span>锤子手机</span></a></li>
+                        <li><a href="https://so.m.jd.com/ware/search.action?keyword=努比亚手机&amp;PTAG=137886.1.2512&amp;searchFrom=category"><img
+                                    src="https://img12.360buyimg.com/focus/s140x140_jfs/t15085/289/2395028996/2546/1e7e1f7b/5a9fa5e7Nc5cc0f6b.jpg"
+                                    id="Imglazyload173"><span>努比亚</span></a></li>
+                        <div style="clear:both"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <!-- 图标 -->
+                    <i class="icon-home"></i>
+                    <!-- 文字  -->
+                    <span>首页</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="category.html">
+                    <i class="icon-category"></i>
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="cart.html">
+                    <i class="icon-cart"></i>
+                    <span>购物车</span>
+                </a>
+            </li>
+            <li>
+                <a href="user.html">
+                    <i class="icon-user"></i>
+                    <span>个人中心</span>
+                </a>
+            </li>
+        </ul>
+    </footer>
+</body>
+
+</html>

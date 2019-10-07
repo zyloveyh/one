@@ -1,0 +1,179 @@
+.man,
+.woman {
+    width: 300px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+
+    .header {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%);
+    }
+
+    .center {
+        margin-top: 60px;
+        height: 180px;
+
+        .content {
+            width: 140px;
+            height: 180px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            .left {
+                width: 150px;
+                height: 20px;
+                border-radius: 10px;
+                position: absolute;
+                left: -60px;
+                top: 40px;
+                transform: rotate(-30deg);
+            }
+
+            .right {
+                width: 150px;
+                height: 20px;
+                border-radius: 10px;
+                position: absolute;
+                right: -60px;
+                top: 40px;
+                transform: rotate(30deg);
+            }
+        }
+    }
+
+    .footer {
+        position: relative;
+        height: 150px;
+
+        .content {
+            width: 180px;
+            height: 150px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            .left {
+                width: 20px;
+                height: 100px;
+
+                border-radius: 10px;
+                position: absolute;
+
+                left: 20px;
+                top: -20px;
+                transform: rotate(30deg);
+            }
+
+            .right {
+                border-radius: 10px;
+                position: absolute;
+                right: 20px;
+                top: -20px;
+                width: 20px;
+                height: 100px;
+                transform: rotate(-30deg);
+            }
+        }
+    }
+}
+
+.man {
+    position: absolute;
+    right: 1200px;
+    top: 50px;
+    transition: all 1s;
+
+    .header {
+        background-color: green;
+    }
+
+    .center {
+        .content {
+            background-color: green;
+
+            .left {
+                background-color: green;
+            }
+
+            .right {
+                background-color: green;
+            }
+        }
+    }
+
+    .footer {
+        .left {
+            background-color: green;
+        }
+
+        .right {
+            background-color: green;
+        }
+    }
+}
+
+.box {
+    width: 300px;
+    height: 500px;
+    background-color: #ccc;
+}
+
+ .man {
+
+    z-index: 999;
+    animation: move 1s infinite;
+}
+
+.woman {
+    position: absolute;
+    right: 10px;
+    top: 50px;
+
+    .header {
+        background-color: pink;
+    }
+
+    .center {
+        .content {
+            background-color: pink;
+
+            .left {
+                background-color: pink;
+            }
+
+            .right {
+                background-color: pink;
+            }
+        }
+    }
+
+    .footer {
+        .left {
+            background-color: pink;
+        }
+
+        .right {
+            background-color: pink;
+        }
+    }
+}
+
+@keyframes move{
+    0%{
+        right: 1200px;
+    }
+    50%{
+        right: 10px;
+    }
+    100%{
+        right: 1200px;
+    }
+}

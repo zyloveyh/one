@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .clock {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            border: 3px solid pink;
+            position: relative;
+            margin: 100px auto;
+        }
+
+        .hour {
+            /* 闹钟的时针 */
+            width: 4px;
+            height: 50%;
+            background-color: #000;
+            position: absolute;
+            left: 50%;
+            /* transform: translate(-50%, 0); */
+            /* 旋转的核心就是度数 转一圈 360度 半圈 180  1/4 90度 在 css里面使用deg单位表示度 */
+            /* rotate表示旋转 表示围绕中心点旋转多少度  10deg 20deg 90deg*/
+            /* 旋转的原点自身是中心点 */
+            transform: rotate(90deg);
+            /* 2d转换的中心点 特别旋转 依赖中心点 默认值 50% 50% 自身宽高一半 */
+            /* transform-origin: 50% 100%; */
+            /* transform-origin: 50% 0%; */
+            /* 可以是数值 */
+            /* transform-origin: 2px 200px; */
+            /* 单词第一个表示水平中心点 第二个是垂直中心点 */
+            /* transform-origin: left top */
+            transform-origin: center bottom;
+        }
+
+        .minute {
+            width: 4px;
+            height: 50%;
+            background-color: red;
+            position: absolute;
+            left: 50%;
+            /* transform: translate(-50%, 0); */
+            transform-origin: center bottom;
+            transform: rotate(225deg);
+        }
+    </style>
+</head>
+
+<body>
+    旋转围绕一个中心来转
+    <!-- 闹钟盒子 -->
+    <div class="clock">
+        <div class="hour"></div>
+        <div class="minute"></div>
+    </div>
+</body>
+
+</html>

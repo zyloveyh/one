@@ -1,0 +1,228 @@
+// 1. 在分类的less文件夹引入公共base.less
+@import './base.less';
+
+html {
+    // height: 100%;
+}
+
+
+// 因为要实现上中下布局 区域父元素是body给body设置伸缩布局
+body {
+    display: flex;
+    // 上中下垂直方向排列 把伸缩布局的方向改成column
+    flex-direction: column;
+    // 直接参照视口也就是屏幕的高度
+    height: 100vh;
+    /* 头部区域 */
+    #header {
+        background-color: #ccc;
+        // 上面高度固定
+        height: 40px;
+        // 父元素加伸缩布局 让子元素实现左 中右
+        display: flex;
+
+        .left {
+            width: 40px;
+            height: 40px;
+            // 加伸缩布局为了让里面的a图标水平垂直居中
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .icon-back {
+                width: 20px;
+                height: 20px;
+
+                background-position: -20px 0;
+            }
+        }
+
+        .center {
+            flex: 1;
+
+            form {
+                width: 100%;
+                height: 100%;
+                // 伸缩布局为了让input输入垂直居中 一定给form高度高度
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                .icon-search {
+                    left: 5px;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+
+                    background-position: -60px -110px;
+                }
+
+                input {
+                    width: 100%;
+                    height: 30px;
+                    border-radius: 15px;
+                    padding-left: 30px;
+                }
+            }
+        }
+
+        .right {
+            width: 40px;
+            height: 40px;
+            // 加伸缩布局为了让里面的a图标水平垂直居中
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .icon-menu {
+                width: 20px;
+                height: 20px;
+
+                background-position: -60px 0;
+            }
+        }
+    }
+    /* 主体区域 */
+    #main {
+        // flex:1占据主轴剩余大小 主轴是垂直就是占满剩余高度
+        flex: 1;
+        display: flex;
+        overflow: hidden;
+
+        .category-left {
+            width: 85px;
+            height: 100%;
+
+            ul {
+                li {
+                    a {
+                        display: flex;
+                        height: 46px;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #ccc;
+                        font-size: 14px;
+                    }
+
+                    &.active {
+                        a {
+                            background-color: #fff;
+                            // 使用全局京东红变量
+                            color: @main-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .category-right {
+            // flex是占据父元素主轴剩下部分 但是如果里面有内容太大了 会把当前flex:1盒子撑大
+            flex: 1;
+            height: 100%;
+            padding: 10px;
+
+            /* 品牌广告 */
+            .banner {
+                img {
+                    width: 100%;
+                }
+            }
+
+            /* 品牌列表 */
+            .branch-list {
+                .title {
+                    h4 {
+                        line-height: 40px;
+                    }
+                }
+
+                .content {
+                    ul {
+                        display: flex;
+                        /* 列表有很多行一定要换行 */
+                        flex-wrap: wrap;
+
+                        li {
+                            // flex:1 当只有一行的时候才适合flex：1多行情况下还是使用百分比
+                            // flex:1;
+                            width: 33.33%;
+
+                            a {
+                                // 给图片和span的父元素a转成flex 让里面图片和span垂直排列
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+
+                                img {
+                                    width: 70px;
+                                }
+
+                                span {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* 底部区域 */
+
+    #footer {
+        height: 50px;
+        background-color: #ccc;
+
+        ul {
+            display: flex;
+
+            li {
+                flex: 1;
+                height: 50px;
+
+                &.active {
+                    a {
+                        span {
+                            color: @main-color;
+                        }
+                    }
+                }
+
+                a {
+                    display: block;
+                    text-align: center;
+
+                    i {
+                        display: block;
+                        width: 25px;
+                        height: 25px;
+                        margin: 0px auto;
+
+
+                        &.icon-home {
+                            background-position: -30px -30px;
+                        }
+
+                        &.icon-category {
+                            background-position: -60px -30px;
+                        }
+
+                        &.icon-cart {
+                            background-position: -90px -30px;
+                        }
+
+                        &.icon-user {
+                            background-position: -120px -30px;
+                        }
+                    }
+
+                    span {
+                        font-size: 12px;
+                        line-height: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

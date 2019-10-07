@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li{
+            list-style: none;
+        }
+        ul {
+            width: 600px;
+            height: 600px;
+            background-color: #ccc;
+            margin: 100px auto;
+            /* 伸缩布局 也叫flex 也有叫弹性布局 属性flex 给父元素设置属性为display: flex
+            就会让里面的所有子元素按照伸缩布局方式排列 */
+            /* 默认情况下 子元素沿着父元素主轴方向排列 
+            目前默认情况下主轴是水平 从左往右 */
+            display: flex;
+        }
+
+        li {
+            flex: 1;
+            /* width: 100px; */
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+
+</html>

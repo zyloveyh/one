@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    伸缩(flex)布局
+    1. 容器(父元素) 和 项目(子元素)
+    2. 为了让子元素在父元素里面进行伸缩布局排列（子元素就可以伸缩了 ）
+    3. 父元素变大了 子元素变大 父元素变小 子元素变小
+    4. 伸缩布局的属性
+        1. 父元素属性
+            1. display:flex  可以让子元素按照伸缩布局方式排列
+            2. flex-direction 改变子元素排列的方向 
+                row 水平 默认值
+                row-reverse 水平反方向 
+                column 垂直方向 
+                column-reverse垂直反方向
+            3. justify-content 主轴的对齐方式
+                flex-start 主轴起点 （水平主轴起点左边 垂直主轴起点上面） 默认值
+                flex-end 主轴终点 （水平主轴终点右边 垂直主轴终点下面）
+                center 主轴中间 （水平主轴中间 垂直主轴中间）
+                space-between 主轴2端对齐  水平左右两端 垂直上下两端
+                space-around 主轴环绕 每个元素周围间距一样(用的少)
+            4. algin-items 侧轴对齐方式 和主轴相反就是侧轴 如果主轴水平 侧轴就是垂直
+                flex-start 侧轴起点
+                flex-end   侧轴终点
+                center  侧轴中间
+                baseline  侧轴第一行文字对齐
+                stretch  侧轴拉伸 默认值
+            5. flex-wrap 换行
+                nowrap 不换行 默认值
+                wrap 换行 （让子元素多行排列 子元素超出父元素宽度才会换行）
+            6. align-content 多行侧轴对齐
+                flex-start 多行侧轴起点 
+                flex-end 多行侧轴终点 
+                center 多行侧轴中间 
+                space-between 多行侧轴2端对齐  
+                space-around 多行侧轴环绕 每个元素周围间距一样(用的少)
+                stretch  多行侧轴拉伸 默认值
+            7. flex-flow 方向和换行的连写
+                前面的方向 后面的换行
+                flex-flow: row wrap;
+        2. 子元素属性
+            1. flex: 属性 表示占据父元素剩余部分的多少份
+                如果有多个人设置了flex  当前元素flex值 / 总的flex的值  == 当前元素占的百分比
+                1/4 == 25%
+                如果只有一个设置了flex 就是占满剩下区域
+                如果有没有设置flex 和 设置的在一起
+                左边没设置固定100  右边设置 flex:1 假设父元素300px  右边多少 父元素宽度300-左边固定100 == 200(剩下的)
+                设置flex属性里面有子元素超过 这个200 会强制把左边挤小（不能让里面子元素超出剩下的范围）
+            2. order 排序 越小 越靠前
+            3. flex-grow 放大比例  值越大 放大倍数越大 默认都是不放大 0
+            4. flex-shrink 缩小比例 值越大 缩小倍数越大 默认都不缩小  1
+            5. flex-basis 子元素占主轴的大小 主轴水平表示宽度 垂直表示高度 和直接设置宽高一样
+            6. 把这些连写在flex属性  flex: 0 1 auto; 默认值 放大 缩小 大小
+            7. align-self: 单独某个子元素 在侧轴对齐方式
+                flex-start 侧轴起点
+                flex-end   侧轴终点
+                center  侧轴中间
+                baseline  侧轴第一行文字对齐
+                stretch  侧轴拉伸 默认值
+</body>
+</html>

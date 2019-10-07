@@ -1,0 +1,210 @@
+/* base.css样式初始化文件 放了一些常见样式初始化 和移动端样式初始化 和 公共类名 */
+/* 把所有标签的间距去掉 开发为了方便先写* 号后面如果上线固定只有这些标签把*号在换成每个标签 */
+* {
+  margin: 0;
+  padding: 0;
+  /* 移动端一定要设置核心模型计算方式为border-box 防止边框padding撑大盒子 出现横向滚动条
+   因为移动端禁止出现横向滚动条 */
+  box-sizing: border-box;
+  /* 去掉移动端能过点击元素的高亮颜色 改成透明就去掉了  只有当按住了才有 */
+  -webkit-tap-highlight-color: transparent;
+}
+li {
+  /* 去掉li的小圆点 */
+  list-style: none;
+}
+a {
+  /* 去掉a的下划线 */
+  text-decoration: none;
+  /* 改变a的默认颜色 */
+  color: #666;
+}
+input {
+  /* 去掉输入的外边框 */
+  border: 0;
+  /* 去掉输入框的内边框 */
+  outline: 0;
+}
+img {
+  /* 解决图片和块级元素之间的间隙问题 */
+  vertical-align: middle;
+}
+/* 清除浮动的类名 给父容器加了在父容器里面多出一个伪元素 这个伪元素设置清除浮动 会让父元素有高度 */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* 公共边框样式 */
+.bl {
+  border-left: 1px solid #ccc;
+}
+.br {
+  border-right: 1px solid #ccc;
+}
+.bb {
+  border-bottom: 1px solid #ccc;
+}
+.bt {
+  border-top: 1px solid #ccc;
+}
+/* 公共的图标样式 */
+/* 选中所有类名以icon-开头的元素 */
+[class^="icon-"] {
+  background-image: url(../images/sprites.png);
+  background-size: 200px 200px;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* 头部区域 */
+  /* 主体区域 */
+  /* 底部区域 */
+}
+body #header {
+  background-color: #ccc;
+  height: 40px;
+  display: flex;
+}
+body #header .left {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #header .left .icon-back {
+  width: 20px;
+  height: 20px;
+  background-position: -20px 0;
+}
+body #header .center {
+  flex: 1;
+}
+body #header .center form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+body #header .center form .icon-search {
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-position: -60px -110px;
+}
+body #header .center form input {
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+  padding-left: 30px;
+}
+body #header .right {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #header .right .icon-menu {
+  width: 20px;
+  height: 20px;
+  background-position: -60px 0;
+}
+body #main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+body #main .category-left {
+  width: 85px;
+  height: 100%;
+}
+body #main .category-left ul li a {
+  display: flex;
+  height: 46px;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  font-size: 14px;
+}
+body #main .category-left ul li.active a {
+  background-color: #fff;
+  color: #de181b;
+}
+body #main .category-right {
+  flex: 1;
+  height: 100%;
+  padding: 10px;
+  /* 品牌广告 */
+  /* 品牌列表 */
+}
+body #main .category-right .banner img {
+  width: 100%;
+}
+body #main .category-right .branch-list .title h4 {
+  line-height: 40px;
+}
+body #main .category-right .branch-list .content ul {
+  display: flex;
+  /* 列表有很多行一定要换行 */
+  flex-wrap: wrap;
+}
+body #main .category-right .branch-list .content ul li {
+  width: 33.33%;
+}
+body #main .category-right .branch-list .content ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body #main .category-right .branch-list .content ul li a img {
+  width: 70px;
+}
+body #main .category-right .branch-list .content ul li a span {
+  font-size: 14px;
+}
+body #footer {
+  height: 50px;
+  background-color: #ccc;
+}
+body #footer ul {
+  display: flex;
+}
+body #footer ul li {
+  flex: 1;
+  height: 50px;
+}
+body #footer ul li.active a span {
+  color: #de181b;
+}
+body #footer ul li a {
+  display: block;
+  text-align: center;
+}
+body #footer ul li a i {
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin: 0px auto;
+}
+body #footer ul li a i.icon-home {
+  background-position: -30px -30px;
+}
+body #footer ul li a i.icon-category {
+  background-position: -60px -30px;
+}
+body #footer ul li a i.icon-cart {
+  background-position: -90px -30px;
+}
+body #footer ul li a i.icon-user {
+  background-position: -120px -30px;
+}
+body #footer ul li a span {
+  font-size: 12px;
+  line-height: 16px;
+}

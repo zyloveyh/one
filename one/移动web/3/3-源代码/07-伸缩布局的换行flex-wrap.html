@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        ul {
+            width: 400px;
+            height: 600px;
+            background-color: #ccc;
+            /* 让子元素按照伸缩布局方式的排列  */
+            display: flex;
+            /* 伸缩盒子的子元素默认不换行会挤在一起 如果想要分多行 */
+            /* flex-wrap: 控制子元素是否换行 默认nowrap不换行 */
+            /* 修改wrap可以让子元素换行 */
+            flex-wrap: wrap;
+            /* 当子元素放不下了的时候就会换行 */
+            /* 调整多行对齐方式 子元素在侧轴对齐方式  多行会一起对齐*/
+            /* align-content: flex-start; */
+            /* align-content: flex-end; */
+            /* align-content: center; */
+            /* align-content: space-between; */
+            /* align-content: space-around; */
+            /* 默认值是拉伸 拉伸一定要子元素没有高度 */
+            /* align-content: stretch; */
+        }
+
+        li {
+            width: 100px;
+            /* height: 100px; */
+            border: 1px solid red;
+            /* 如果想操作li里面的子元素(文字来按照伸缩布局方式显示 把li设置display: flex) */
+            display: flex;
+            /* 主轴对齐 侧轴对齐 */
+            /* 而且还可以自适应 不管盒子变宽变高 子元素永远保持居中 */
+            justify-content: center;
+            align-items: center;
+            /* text-align: center; */
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>第1个li</li>
+        <li>第2个li</li>
+        <li>第3个li</li>
+        <li>第4个li</li>
+        <li>第5个li</li>
+        <li>第6个li</li>
+        <li>第7个li</li>
+        <li>第8个li</li>
+        <li>第4个li</li>
+        <li>第5个li</li>
+        <li>第6个li</li>
+        <li>第7个li</li>
+    </ul>
+</body>
+
+</html>

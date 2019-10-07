@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img:first-of-type {
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            left: 0px;
+            /* transition: all 1s; */
+            z-index: 99;
+            /* 给第一个图片调用这个动画 跟调用过渡差不多 */
+            /* 动画就是过渡拆分 */
+            /* 第一次参数是动画名称 第二个是动画持续时间  第三个是速度函数  第四个动画次数 第五个延迟 第六个是是否要逆向动画*/
+            animation: move 0.5s ease  1s alternate infinite ;
+            /* 如果使用固定次数先写次数再写时间 5  1s 如果使用 单词就随便在那里写 */
+            
+            /* 属性	描述	CSS
+            @keyframes	规定动画。	3
+            animation	所有动画属性的简写属性，除了 animation-play-state 属性。	3
+            animation-name	规定 @keyframes 动画的名称。	3
+            animation-duration	规定动画完成一个周期所花费的秒或毫秒。默认是 0。	3
+            animation-timing-function	规定动画的速度曲线。默认是 "ease"。	3
+            animation-delay	规定动画何时开始。默认是 0。	3
+            animation-iteration-count	规定动画被播放的次数。默认是 1。	3
+            animation-direction	规定动画是否在下一周期逆向地播放。默认是 "normal"。	3
+            animation-play-state	规定动画是否正在运行或暂停。默认是 "running"。	3
+            animation-fill-mode	规定对象动画时间之外的状态。	3 */
+
+        }
+
+        img:last-of-type {
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            /* left: 1200px; */
+            right: 0;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: #ccc;
+        }
+        .box:hover img:first-of-type{
+            /* 暂定动画 */
+            animation-play-state:paused;
+        }
+
+        /* 必须手动触发 只能触发一次 */
+        /* .box:hover img{
+            left: 1000px;
+        } */
+        /* 动画不需要手动触发 可以触发多次 */
+        /* 通过@keyframes 关键字定义一个动画 */
+        /* @keyframes 关键字 move 动画名称 {} 动画要做的事情  */
+        @keyframes move {
+
+            /* 动画分段的 从 0  100% 一次动画整个过程要做的事情 */
+            0% {
+                /* 定位left:0在最左边 动画刚开始的在最左边 */
+                left: 0px;
+            }
+
+            /* 10%{
+
+            }
+            20%{
+
+            } */
+            100% {
+                /* 定位left:1000px 到右边了 动画已经结束了 */
+                left: 1300px;
+            }
+             
+            /* 表示 0 到100% */
+            form{
+
+            }
+            to{
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 动画： 可以元素从一个状态 到另一个状态 自动变化  还可以一直变 解决过渡效果需要手动触发问题 -->
+        <img src="./images/man.png" alt="">
+        <img src="./images/woman.png" alt="">
+    </div>
+</body>
+
+</html>

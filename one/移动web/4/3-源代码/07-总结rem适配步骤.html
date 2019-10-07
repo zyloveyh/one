@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            /* 假设根元素是100px  是在你设计稿对应的屏幕上 假如设计稿750 对应的屏幕 375
+            假设在375 屏幕 根元素100px    计算100px在 375px屏幕对应多少vw  100/375 * 100 26.66667vw*/
+            font-size: 26.66667vw;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .box {
+            display: flex;
+            margin: 0.05rem;
+        }
+
+        .box a {
+            /* 假设是100px  14/100 == 0.14rem */
+            font-size: 0.14rem;
+        }
+
+        .left {
+            flex: 1;
+            /* 盒子的高度 100px / 20px == 5rem */
+            height: 1rem;
+            background-color: olivedrab;
+            display: flex;
+            border-radius: 10px 0px 0px 10px;
+        }
+
+        .left a {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .right {
+            flex: 2;
+            /* 假设根元素100px 那么 100px / 100 == 1rem */
+            height: 1rem;
+            background-color: skyblue;
+            display: flex;
+            /* 为什么子元素高度会和父元素一样因为 默认情况下
+            align-items的值是stretch 表示侧轴拉伸 */
+            /* 当前主轴水平 侧轴就是 子元素在侧轴垂直拉伸 和right高度一样了 */
+            align-items: stretch;
+            border-radius: 0px 10px 10px 0px;
+        }
+
+        .right div {
+            flex: 1;
+            /* 为了让右边里面的2个子元素垂直平分 设置flex */
+            display: flex;
+            /* 垂直把方向改成column */
+            flex-direction: column;
+            border-left: 1px solid #fff;
+        }
+
+        .right div a {
+            /* 主轴平分 当前a父元素主轴是垂直轴 垂直平分 */
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .right div a:first-child {
+            border-bottom: 1px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 假设根元素大小 （不能px） 使用vw 参照视口变化而变化
+        为了方便计算 一般网站会把根元素假设为100px  1rem == 100px
+        只要原来px  / 100 就是对应的rem值
+    2. 把页面元素px 转成对应的rem 原来是多少px / 根元素大小 就是rem值 -->
+    <!-- 淘宝等主流的rem适配方案 -->
+    <div class="box">
+        <div class="left">
+            <a href="#">
+                机票
+            </a>
+        </div>
+        <div class="right">
+            <div class="right1">
+                <a href="#">
+                    火车票
+                </a>
+                <a href="#">
+                    特价机票
+                </a>
+            </div>
+            <div class="right2">
+                <a href="#">汽车票</a>
+                <a href="#">专车票</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

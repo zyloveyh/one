@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<!-- 网站语言 cn -->
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置视口 响应式也要考虑手机屏幕 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>微金所主页</title>
+    <!-- 1. 引包 -->
+    <!-- lib是所有第三方包的文件夹 library 库(包) 这个库里面的代码只用不改 -->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <!-- 2. 使用微金所的图标 引入微金所图标生成之后的font.css文件 -->
+    <link rel="stylesheet" href="./css/font.css">
+    <!-- 3. 引入主页自己的index.css -->
+    <link rel="stylesheet" href="./less/index.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <!-- 头部在小 和 超小屏幕需要隐藏 给头部加上隐藏类 -->
+    <!-- 写了哪个只在哪个隐藏 条件有2个必须同时满足才会成立 -->
+    <header id="header" class="hidden-sm hidden-xs">
+        <!-- 内容要居中使用框架的布局容器 container -->
+        <div class="container">
+            <!-- 也是一块一块的结构虽然不是平分的但是也可以使用栅格系统
+            第一块2格  第二块5个 第三块是2 第四块3个 2+5+2+3
+            栅格只需要在中 和大生效 且中大是一样的 只要中屏幕类名向上兼容 -->
+            <!-- 文本居中是会继承 使用对齐类名 -->
+            <div class="row text-center">
+                <div class="col-md-2">
+                    <a href="#">
+                        <!-- 使用微金所font.css里面的定义的图标 -->
+                        <i class="icon-mobilephone"></i>
+                        手机微金所
+                        <!-- 使用bootstrap官方定义组件里面字体图标  来源bootstrap.css里面  -->
+                        <i class="glyphicon glyphicon-chevron-up"></i>
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <!-- 使用bootstrap电话的图标 -->
+                    <span><i class="glyphicon glyphicon-earphone"></i> 4006-89-4006（服务时间：9:00-21:00）</span>
+                </div>
+                <div class="col-md-2">
+                    <a href="#">常见问题</a>
+                    <a href="#">财富登录</a>
+                </div>
+                <div class="col-md-3">
+                    <!-- 把按钮变成小按钮 -->
+                    <button type="button" class="btn btn-danger btn-sm">免费注册</button>
+                    <!-- <a href="#" class="btn btn-link">登录</a> -->
+                    <button type="button" class="btn btn-link">登录</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- 导航条 -->
+    <!-- navbar navbar-default 导航条的容器 -->
+    <nav id="nav" class="navbar navbar-default">
+        <!-- 有一个布局容器container -->
+        <div class="container">
+            <!-- 导航条的头部 -->
+            <div class="navbar-header">
+                <!-- navbar-toggle 表示导航的切换按钮 只要加了这个类名跑到右边 -->
+                <button class="navbar-toggle">
+                    <!-- 按钮里面的一个一个横杠 -->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- 导航条头部一般放品牌logo 单独有一个品牌类名 -->
+                <div class="navbar-brand">
+                    <!-- 品牌放微金所的logo字体图标 -->
+                    <i class="icon-icon"></i>
+                    <i class="icon-logo"></i>
+                </div>
+            </div>
+            <!-- 导航条的主体 -->
+            <div class="navbar-collapse">
+                <!-- 主体里面分为了左边的导航和右边的导航 -->
+                <!-- navbar-nav默认导航 默认在左边的 默认情况下在屏幕大于768以上才会浮动 
+                当768以下默认就不浮动垂直排列-->
+                <ul class="nav navbar-nav">
+                    <!-- active默认倍选中的导航条 -->
+                    <li class="active"><a href="#">我要投资</a> </li>
+                    <li><a href="#">我要借款</a> </li>
+                    <li><a href="#">平台介绍</a> </li>
+                    <li><a href="#">新手专区</a> </li>
+                    <li><a href="#">最新动态</a> </li>
+                    <li><a href="#">微论坛</a> </li>
+                </ul>
+                <!-- navbar-right表示右边的导航 -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">个人中心</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 轮播图区域 -->
+    <section id="slide">
+        <!-- 图片的响应式切换有2个图片分别是大图和小图 大图在 小中大显示 小图在超小屏幕显示 -->
+        <!-- 小 中 大屏幕显示大图  超小屏幕要隐藏 使用响应式工具隐藏类 -->
+        <img src="./img/slide_01_2000x410.jpg" alt="" class="hidden-xs">
+        <!-- 小 中 大屏幕隐藏小图  超小屏幕要显示 使用响应式工具隐藏类 -->
+        <img src="./img/slide_01_640x340.jpg" alt="" class="hidden-sm hidden-md hidden-lg">
+    </section>
+    <!-- 特色介绍区域 -->
+    <section id="feature" class="hidden-xs">
+        <!-- 居中的容器 -->
+        <div class="container">
+            <!-- 在中大屏幕一行3列 col-md-4  在小屏幕分2列 col-sm-6 在超小屏幕隐藏 hidden-xs -->
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <!-- 使用bootstrap的组件 media 媒体对象 -->
+                    <div class="media">
+                        <!-- 我们需要整个a把左右包住把a放在外面 -->
+                        <a href="#">
+                            <!-- 媒体对象的左边 -->
+                            <div class="media-left">
+
+                                <!-- 左边的图片换成字体图标 -->
+                                <i class="icon-meiyuan"></i>
+
+                            </div>
+                            <!-- 媒体对象的主体右边 -->
+                            <div class="media-body">
+                                <h4 class="media-heading">支付交易不保障</h4>
+                                <p>银联支付全程不安全随时跑路</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <!-- 使用bootstrap的组件 media 媒体对象 -->
+                    <div class="media">
+                        <!-- 我们需要整个a把左右包住把a放在外面 -->
+                        <a href="#">
+                            <!-- 媒体对象的左边 -->
+                            <div class="media-left">
+
+                                <!-- 左边的图片 -->
+                                <i class="icon-meiyuan"></i>
+
+                            </div>
+                            <!-- 媒体对象的主体右边 -->
+                            <div class="media-body">
+                                <h4 class="media-heading">支付交易不保障</h4>
+                                <p>银联支付全程不安全随时跑路</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <!-- 使用bootstrap的组件 media 媒体对象 -->
+                    <div class="media">
+                        <!-- 我们需要整个a把左右包住把a放在外面 -->
+                        <a href="#">
+                            <!-- 媒体对象的左边 -->
+                            <div class="media-left">
+
+                                <!-- 左边的图片 -->
+                                <i class="icon-meiyuan"></i>
+
+                            </div>
+                            <!-- 媒体对象的主体右边 -->
+                            <div class="media-body">
+                                <h4 class="media-heading">支付交易不保障</h4>
+                                <p>银联支付全程不安全随时跑路</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <!-- 使用bootstrap的组件 media 媒体对象 -->
+                    <div class="media">
+                        <!-- 我们需要整个a把左右包住把a放在外面 -->
+                        <a href="#">
+                            <!-- 媒体对象的左边 -->
+                            <div class="media-left">
+
+                                <!-- 左边的图片 -->
+                                <i class="icon-meiyuan"></i>
+
+                            </div>
+                            <!-- 媒体对象的主体右边 -->
+                            <div class="media-body">
+                                <h4 class="media-heading">支付交易不保障</h4>
+                                <p>银联支付全程不安全随时跑路</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <!-- 使用bootstrap的组件 media 媒体对象 -->
+                    <div class="media">
+                        <!-- 我们需要整个a把左右包住把a放在外面 -->
+                        <a href="#">
+                            <!-- 媒体对象的左边 -->
+                            <div class="media-left">
+
+                                <!-- 左边的图片 -->
+                                <i class="icon-meiyuan"></i>
+
+                            </div>
+                            <!-- 媒体对象的主体右边 -->
+                            <div class="media-body">
+                                <h4 class="media-heading">支付交易不保障</h4>
+                                <p>银联支付全程不安全随时跑路</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <!-- 使用bootstrap的组件 media 媒体对象 -->
+                    <div class="media">
+                        <!-- 我们需要整个a把左右包住把a放在外面 -->
+                        <a href="#">
+                            <!-- 媒体对象的左边 -->
+                            <div class="media-left">
+
+                                <!-- 左边的图片 -->
+                                <i class="icon-meiyuan"></i>
+
+                            </div>
+                            <!-- 媒体对象的主体右边 -->
+                            <div class="media-body">
+                                <h4 class="media-heading">支付交易不保障</h4>
+                                <p>银联支付全程不安全随时跑路</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 立即预约区域 -->
+    <section id="booking">
+        <!-- 居中的容器 -->
+        <!-- 容器也自带了清除浮动的伪元素样式 不需要单独写clearfix类名 -->
+        <div class="container">
+            <!-- 使用bootstrap全局CSS样式 辅助类 快速浮动 左浮动和右浮动 -->
+            <div class="pull-left">
+                <!-- 全局CSS样式 辅助类 情景文本颜色 -->
+                <i class="icon-naozhong"></i> 现在有 <span class="text-danger">458</span> 人在排队，累计预约交易成功
+                <span class="text-danger">7409</span> 次。
+                什么是预约投标？ <a href="#" class="text-danger">立即预约</a>
+            </div>
+            <div class="pull-right">
+                <a href="#"> <i class="icon-video"></i> 微金所企业宣传片</a>
+            </div>
+        </div>
+    </section>
+    <!-- 所有商品区域 -->
+    <section id="products">
+        <!-- 添加居中容器container -->
+        <div class="container">
+            <!-- 商品的标题链接 -->
+            <div class="title">
+                <!-- list-unstyled  取消列表样式 -->
+                <ul class="list-unstyled">
+                    <li class="active"><a href="#">特别推荐</a></li>
+                    <li><a href="#">微投资</a></li>
+                    <li><a href="#">微小宝</a></li>
+                    <li><a href="#">微消费</a></li>
+                    <li><a href="#">微增利</a></li>
+                    <li><a href="#">微金宝</a></li>
+                    <li><a href="#">微转让</a></li>
+                </ul>
+            </div>
+            <!-- 商品的内容 里面有很多商品 使用栅格布局 -->
+            <div class="content">
+                <!-- 有栅格系统 中 大屏幕一行3列 col-md-4 小屏幕2列 col-sm-6  超小屏幕1列 col-xs-12(可以省略) -->
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <!-- 单个商品 -->
+                        <div class="product active">
+                            <!-- 商品左边和右边 -->
+                            <div class="left">
+                                <div class="product-title">
+                                    <h4>新手体验坑001期</h4>
+                                </div>
+                                <div class="product-content">
+                                    <div class="row">
+                                        <!-- 由于所有屏幕都需要占一半使用最小的xs -->
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <!-- strong加粗 sub下标 -->
+                                <p><strong>8</strong> <sub>%</sub> </p>
+                                <p>年利率</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <!-- 单个商品 -->
+                        <div class="product">
+                            <!-- 商品左边和右边 -->
+                            <div class="left">
+                                <div class="product-title">
+                                    <h4>新手体验坑001期</h4>
+                                </div>
+                                <div class="product-content">
+                                    <div class="row">
+                                        <!-- 由于所有屏幕都需要占一半使用最小的xs -->
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <p><strong>8</strong> <sub>%</sub> </p>
+                                <p>年利率</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <!-- 单个商品 -->
+                        <div class="product">
+                            <!-- 商品左边和右边 -->
+                            <div class="left">
+                                <div class="product-title">
+                                    <h4>新手体验坑001期</h4>
+                                </div>
+                                <div class="product-content">
+                                    <div class="row">
+                                        <!-- 由于所有屏幕都需要占一半使用最小的xs -->
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <p><strong>8</strong> <sub>%</sub> </p>
+                                <p>年利率</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <!-- 单个商品 -->
+                        <div class="product">
+                            <!-- 商品左边和右边 -->
+                            <div class="left">
+                                <div class="product-title">
+                                    <h4>新手体验坑001期</h4>
+                                </div>
+                                <div class="product-content">
+                                    <div class="row">
+                                        <!-- 由于所有屏幕都需要占一半使用最小的xs -->
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <p><strong>8</strong> <sub>%</sub> </p>
+                                <p>年利率</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <!-- 单个商品 -->
+                        <div class="product">
+                            <!-- 商品左边和右边 -->
+                            <div class="left">
+                                <div class="product-title">
+                                    <h4>新手体验坑001期</h4>
+                                </div>
+                                <div class="product-content">
+                                    <div class="row">
+                                        <!-- 由于所有屏幕都需要占一半使用最小的xs -->
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <p><strong>8</strong> <sub>%</sub> </p>
+                                <p>年利率</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <!-- 单个商品 -->
+                        <div class="product">
+                            <!-- 商品左边和右边 -->
+                            <div class="left">
+                                <div class="product-title">
+                                    <h4>新手体验坑001期</h4>
+                                </div>
+                                <div class="product-content">
+                                    <div class="row">
+                                        <!-- 由于所有屏幕都需要占一半使用最小的xs -->
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p>起步价</p>
+                                            <p>1000.00万</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <p><strong>8</strong> <sub>%</sub> </p>
+                                <p>年利率</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 新闻区域 -->
+    <section id="news">
+        <!-- 容器居中 -->
+        <div class="container">
+            <div class="row">
+                <!-- 中屏幕以上 2 2 1 7  小超小是全屏可以省略不写( col-xs-12)-->
+                <!-- <div class="col-md-2"></div> -->
+                <!-- 让第二个div往右偏移2列 -->
+                <div class="col-md-2 col-md-offset-2">
+                    <h4>全部新闻</h4>
+                </div>
+                <div class="col-md-1">
+                    <ul class="news-title list-unstyled">
+                        <li class="active">
+                            <a href="#">
+                                <i class="icon-news01"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-news02"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-news03"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-news04"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-7">
+                    <ul class="news-content list-unstyled">
+                        <li>【微新闻】 1宋喆获刑6年新 46万</li>
+                        <li>【微新闻】 1宋喆获刑6年新 46万</li>
+                        <li>【微新闻】 1宋喆获刑6年新 46万</li>
+                        <li>【微新闻】 1宋喆获刑6年新 46万</li>
+                        <li>【微新闻】 1宋喆获刑6年新 46万</li>
+                        <li>【微新闻】 1宋喆获刑6年新 46万</li>
+                        <li>【微新闻】 1宋喆获刑6年新 46万</li>
+                        <li>【微新闻】 1宋喆获刑6年新 46万</li>
+                        <li>【微新闻】 1宋喆获刑6年新 46万</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <!-- 也要居中使用容器 -->
+        <div class="container">
+            <h3 class="text-center">合作伙伴</h3>
+            <!-- 栅格系统 在中大屏幕下 一行分为3列  3列每列里面又永远分为3列 -->
+            <!-- 中大的 一行放3个大列 小屏幕放2个大列 超小放1个大列 -->
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <!-- 小列所有屏幕都是分3小列 使用xs -->
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <a href="#">
+                                <i class="icon-partner1"></i>
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="#">
+                                <i class="icon-partner2"></i>
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="#">
+                                <i class="icon-partner3"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <a href="#">
+                                <i class="icon-partner4"></i>
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="#">
+                                <i class="icon-partner5"></i>
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="#">
+                                <i class="icon-partner6"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <a href="#">
+                                <i class="icon-partner7"></i>
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="#">
+                                <i class="icon-partner8"></i>
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="#">
+                                <i class="icon-partner9"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

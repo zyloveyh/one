@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        ul {
+            width: 600px;
+            height: 600px;
+            background-color: #ccc;
+            margin: 100px auto;
+            /* 伸缩布局 也叫flex 也有叫弹性布局 属性flex 给父元素设置属性为display: flex
+            就会让里面的所有子元素按照伸缩布局方式排列 */
+            /* 默认情况下 子元素沿着父元素主轴方向排列 
+            目前默认情况下主轴是水平 从左往右 */
+            display: flex;
+
+            flex-direction: row;
+            /* 主轴居中 */
+            justify-content: center;
+            /* 现在主轴是水平 侧轴和主轴相反就是垂直的 */
+            /* align-items: flex-start | flex-end | center | baseline | stretch; */
+            /* 侧轴垂直居上 */
+            /* align-items: flex-start; */
+            /* 侧轴垂直居下 */
+            /* align-items: flex-end; */
+            /* 侧轴垂直居中 */
+            /* align-items: center; */
+            /* 侧轴按照第一行文字来对齐 只有文字大小不一样才能看到出来 */
+            /* align-items: baseline; */
+            /* 默认值 默认会让子元素在侧轴 目前侧轴垂直 垂直拉伸盛满整个父元素高度 */
+            /* align-items: stretch; */
+        }
+
+        li {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+        li:nth-child(1){
+            font-size: 20px;
+        }
+        li:nth-child(2){
+            font-size: 20px;
+        }
+        li:nth-child(3){
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1范德萨范德萨</li>
+        <li>2发生的范德萨</li>
+        <li>3发送到发送到</li>
+    </ul>
+</body>
+
+</html>

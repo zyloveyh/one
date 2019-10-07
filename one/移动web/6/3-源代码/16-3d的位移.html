@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            /* rgba 设置颜色透明度 */
+            background: rgba(255, 0, 0, 0.3);
+            margin: 200px auto;
+            /* 如果需要做3D转换要给父元素设置3d属性 和 透视才可以看得到 */
+            /* 透视表示人的眼睛离平面的距离 */
+            perspective: 400px;
+        }
+        .child{
+            width: 100px;
+            height: 100px;
+            background-color: rgba(0,255,0,0.5);
+            /* X 和 Y属于3d 轴里面的水平轴 和 垂直轴 */
+            /* transform: translateX(100px); */
+            /* transform: translateY(100px); */
+            /* 负值表示屏幕的后面  越远*/
+            /* 当前z的大小跟透视相关的
+            z轴 假设是负值 
+                假如视距 眼睛离屏幕  100
+                z如果没有有设置 盒子默认100px   看到盒子大小就100px
+                z设置了位移 -100px 盒子之前是100  位移z-100 盒子离平面 远了100px 参照眼睛远了2倍 看到盒子只是50px
+                z设置了位移 -200px 盒子之前是100大小  位移z-200 盒子离平面 远了200px 参照眼睛远了3倍 看到盒子只是33.33px
+                z设置了之后会变远多少倍 取决 透视的距离  z大小 / 透视大小   -200 / 100  -2倍（缩小2倍）  200 / 100 放大2倍 */
+            transform: translate3d(100px,100px,-800px);
+            /* 正值表示屏幕前面 越近*/
+            /* transform: translate3d(100px,100px,200px); */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="child">文字</div>
+    </div>
+</body>
+
+</html>

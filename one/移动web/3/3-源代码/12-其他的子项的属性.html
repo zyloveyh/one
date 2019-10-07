@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        ul {
+            width: 400px;
+            height: 600px;
+            background-color: #ccc;
+            display: flex;
+            /* flex-direction: column; */
+        }
+
+        li {
+            /* flex: 1; */
+            /* flex: 放大 缩小 大小 */
+            /* flex: 0 1 100px; */
+            flex:1;
+            width: 100px;
+            border: 1px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* 设置一个子项属性 order 就顺序排序的意思 使用这个属性控制子元素排序顺序
+        值默认都是0 值越小排序越靠前  作用不大了解即可*/
+        li:nth-child(1) {
+            order: 1;
+            flex-shrink: 1;
+        }
+
+        li:nth-child(2) {
+            order: 2;
+            /* 我要放大2倍 */
+            /* 也相当于占了2份 */
+            /* flex-grow: 2; 简写形式 */
+            /* 直接flex:2 一样 */
+            /* flex:2; */
+            flex-shrink: 1;
+            /* align-self:单独设置子元素在侧轴的对齐方式 */
+            align-self: center;
+        }
+
+        li:nth-child(3) {
+            order: 3;
+            /* 当其他兄弟缩小比例都为1 有一个人改了2 当前这个元素缩小2倍 3缩小3倍 */
+            flex-shrink: 2;
+            /* 但是没有太多用处 */
+        }
+
+        li:nth-child(4) {
+            order: 4;
+            flex-shrink: 1;
+            /* 和设置元素宽度或者高度的效果的一样 设置当子元素占据多少px单位 也可以是百分比 
+            跟随主轴变化 主轴水平 表示设置宽度 主轴垂直表示设置高度*/
+            /* flex-basis: 20px; */
+            flex-basis: 10%;
+            /* width: 20px; */
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+</body>
+
+</html>

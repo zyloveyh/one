@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    1. 移动端屏幕适配： 宽度高度 内容等都要适配 全局自适应
+    2. 使用相对单位em 和 rem单位
+    3. em相对自身 适配每个都要修改很麻烦
+    4. rem相对根元素（html元素） 比较统一 适配只需要修改html元素的字体即可
+    5. rem适配方案
+        1. 假设一个根元素字体大小 （随便多少都可以 20 40 100等 不能小于12）
+        2. 把页面的px转成rem单位 使用px/根元素大小 == 对应rem值
+            例如根元素假设20   px/20 == 多少rem
+            例如假设100  px/100 == 多少rem
+        3. 根元素不会随着屏幕去变化
+            1. 把根元素px变成和屏幕有关 vw 把px转成vw
+            2. 公式 当前根元素px值 / 当前屏幕(视口宽度)  * 100 求到视口百分比值
+                例如 100  / 375 * 100  26.6667vw
+        4. 只要屏幕变了 根元素会变大变化 所有使用了rem单位都会变大变小
+    6. 使用less 百分比 flex + rem 实现携程首页全局自适应布局
+        1. 写页面加视口
+        2. 创建less文件 写公告样式
+        3. rem这种也是属于公共 在里面html字体大小   html字体大小用来实现屏幕适配不是设置文字大小
+             把body文字大小设置会默认14等 也可以是rem
+        4. 写的所有px都转成 
+        5. 使用插件 cssrem插件 使用插件会帮你自动转换 安装这个插件
+            改一下配置默认根元素16 改成你设置根元素例如100
+            写例如宽度 width:100px 自然会在显示对应的rem
+        6. 使用伸缩布局配合rem单位完成携程首页
+            头部 左右布局 
+            导航 4个
+            第一个导航 flex平分
+            第二三四个 左右布局
+                右边又是平分布局 换行
+            广告 flex平分换行
+            底部居中
+    7. 响应式布局： 一个页面同时适配多个屏幕（从手机到电脑等很多屏幕）
+    8. 原理 使用CSS3的媒体查询 判断屏幕生效什么样式
+    9. 需要考虑的屏幕
+        1. 大屏幕 w>1200
+        2. 中屏幕  w> 992  w < 1200
+        2. 小屏幕  w> 768  w < 992
+        2. 超小屏幕  w< 768
+    10. 判断的写法
+        1. width:值 等于这个值
+        2. min-width:值 大于等于这个值  从小到到写 让大的覆盖小的
+        3. max-width:值 小于等于这个值  从大到小写 让小的覆盖大的
+    11. 预习bootstrap响应式框架使用
+        1. 引包
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+       >
+       2. 查看官网文档复制代码 检查元素理解代码左右
+
+</body>
+</html>

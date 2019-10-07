@@ -1,0 +1,352 @@
+/* 微金所的主题色变量 */
+@main-color: #e92322;
+
+/* bootstrap觉得a还是要有蓝色 如果我们需要改成黑色自己设置全部黑色 */
+a {
+    color: #666;
+
+    &:hover {
+        // 和去掉下滑线
+        text-decoration: none;
+    }
+}
+
+/* 因为bootstrap框架(包)里面自带了的样式初始化 不需要再引入base.less */
+/* 头部区域的样式 */
+#header {
+    border-bottom: 1px solid #ccc;
+
+    .row {
+
+        // 只选中row的子元素列 防止选到其他非列这种div
+        >div {
+            height: 40px;
+            line-height: 40px;
+            font-size: 12px;
+
+            .btn-link {
+                color: #666;
+            }
+
+            // 选中第一个div后面的所有兄弟排除了第一个
+            &~div {
+                border-left: 1px solid #ccc;
+            }
+        }
+    }
+}
+
+/* 导航条的样式 */
+#nav {
+    // 默认导航条有一个灰色背景色变成白色
+    background-color: #fff;
+    /* 导航条默认底部有一个间距去掉 */
+    margin-bottom: 0;
+
+    // 高度一定不能给这种容器写死 高度可能不一样 手机和电脑的时候高度不一样
+    // height: 80px;
+    /* 导航条的头部 */
+    .navbar-header {
+
+        // 移动端显示菜单切换按钮默认margin-top是5px 整体高度多30  上下多15  8+15 =23
+        .navbar-toggle {
+            margin-top: 23px;
+        }
+
+        // 品牌logo的类名
+        .navbar-brand {
+            height: 80px;
+            // 因为到韩跳跳默认有上下15px padding 内容高度 80-15-15 == 50 行高只有50px
+            line-height: 50px;
+
+            i {
+                font-size: 30px;
+
+                &:first-child {
+                    color: @main-color;
+                }
+
+                &:last-child {
+                    color: #333;
+                }
+            }
+        }
+    }
+
+    /* 导航条的身体 */
+    .navbar-collapse {
+
+        // 导航条的链接的ul
+        .navbar-nav {
+            li {
+                a {
+                    height: 80px;
+                    /* 注意导航链接的a也有上下padding 15 减掉就是50行高 */
+                    line-height: 50px;
+
+                    &:hover {
+                        border-bottom: 2px solid @main-color;
+                    }
+                }
+
+                &.active {
+                    a {
+                        background-color: #fff;
+                        border-bottom: 2px solid @main-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 轮播图区域样式 */
+#slide {
+    img {
+        width: 100%;
+    }
+}
+
+/* 特色介绍区域 */
+#feature {
+    // 给父元素设置padding让内容往中间挤 显得大气一些
+    padding: 40px 0;
+
+    a:hover {
+        color: @main-color;
+    }
+}
+
+/* 立即预约的样式 */
+#booking {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    /* 因为可能也是有多行设置行高 会造成多行间距太大问题
+    推荐使用padding */
+    padding: 20px 0;
+
+    /* 覆盖默认红色类名的颜色 */
+    .text-danger {
+        color: @main-color;
+    }
+}
+
+/* 所有商品区域样式 */
+#products {
+    /* 设置大容器的间距和背景色 */
+    padding: 40px 0;
+    background-color: #eee;
+
+    /* 商品标题 */
+    .title {
+
+        ul {
+            display: flex;
+            /* 当父元素宽度不够的时候子元素自动换行 */
+            flex-wrap: wrap;
+            border-bottom: 1px solid #ccc;
+            /* 去掉ul默认底部margin */
+            margin-bottom: 0;
+
+            li {
+                /* 为了让li和ul边框重叠在一起 让li往下走1px margin-bottom -1px */
+                margin-bottom: -1px;
+
+                a {
+                    display: block;
+                    /* 给里面的a设置上下左右padding让文件居中 */
+                    padding: 15px;
+                    font-size: 16px;
+                    color: #333;
+
+                    &:hover {
+                        border-bottom: 3px solid @main-color;
+                    }
+                }
+
+                &.active {
+                    a {
+                        border-bottom: 3px solid @main-color;
+                    }
+                }
+            }
+        }
+    }
+
+    /* 商品的内容 */
+    .content {
+
+        /* 商品盒子 */
+        .product {
+            background-color: #fff;
+            display: flex;
+            margin-top: 20px;
+
+            &.active {
+                background-color: @main-color;
+                color: #fff;
+                position: relative;
+
+                /* 单独给整个商品添加图标 图标直接使用伪元素添加 */
+                &::before {
+                    // 1. 使用图标的编码
+                    content: "\e915";
+                    // 2. 使用图标的对应的字体
+                    font-family: 'itcast';
+                    // 设置大小
+                    font-size: 30px;
+                    position: absolute;
+                    left: 0;
+                    /* 图标本身上面有空隙 */
+                    top: -6px;
+                }
+            }
+
+            /* 父元素flex布局 让右边固定宽度 左边flex:1自适应 */
+            .left {
+                flex: 1;
+                padding: 15px;
+
+                .product-title {
+                    text-align: center;
+                }
+
+                .product-content {
+                    .row {
+
+                        // 让偶数栅格里面文字居右
+                        div:nth-child(even) {
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+
+            .right {
+                width: 100px;
+                border-left: 1px dashed #ccc;
+                display: flex;
+                /* 垂直方向让2行文字居中 */
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                p {
+                    /* 默认段落之间有一个底部间距 */
+                    margin-bottom: 0;
+
+                    strong {
+                        font-size: 30px;
+                    }
+                }
+
+                position: relative;
+
+                /* 给右边加2个伪元素小圆 一个定位在上面 一个定位在下面 */
+                &::before,
+                &::after {
+                    content: '';
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    background-color: #eee;
+                    position: absolute;
+                    left: -8px;
+                }
+
+                // 定位在上面top -8
+                &::before {
+                    top: -8px;
+                }
+
+                // 定位在下面bottom -8
+                &::after {
+                    bottom: -8px;
+                }
+            }
+        }
+    }
+}
+
+
+/* 新闻区域的样式 */
+#news {
+    padding: 40px 0;
+
+    h4 {
+        text-align: center;
+        line-height: 40px;
+        border-bottom: 1px dashed #ccc;
+        position: relative;
+        /* 设置右边的小圆 */
+        &::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            position: absolute;
+            right: -10px;
+            bottom: -5px;
+        }
+    }
+
+    /* 新闻分类 标题*/
+    .news-title {
+        /* 只有在小屏幕和超小屏幕才需要  单独处理在移动端让li横着排列并且里面a居中*/
+        @media(max-width:991.2px){
+            display: flex;
+            li{
+                flex: 1;
+                display: flex;
+                justify-content: center;
+            }
+        }
+        li {
+            &.active{
+                a{
+                    background-color: @main-color;
+                }
+            }
+            a {
+                /* 固定a大小设置圆角让文字水平垂直居中 */
+                display: block;
+                width: 60px;
+                height: 60px;
+                text-align: center;
+                border-radius: 50%;
+                line-height: 60px;
+                margin-bottom: 20px;
+                color: #ccc;
+
+                &:hover {
+                    background-color: @main-color;
+                }
+
+                i {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+    /* 新闻内容 */
+    .news-content {
+        li {
+            line-height: 36px;
+        }
+    }
+}
+
+/* 底部区域的样式 */
+#footer{
+    a{
+        /* 设置a里面的图标居中 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i{
+            // 设置图标的字体大小变大
+            font-size: 60px;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 如果想用百分比实现高度100%必须给元素外面的所有都一个100% */
+        /* html,
+        body {
+            height: 100%;
+        }
+        .div1,.div2,.div3,.div4{
+            height: 100%;
+        } */
+        div {
+            /* 固定宽高的写法无法在不同屏幕手机实现屏幕适配 */
+            /* width: 375px; */
+            /* height: 667px; */
+            /* 使用百分比布局 */
+            /* 百分比参照的父元素 父元素body body没有高度 body也是参照html html也默认没高度 */
+            /* width: 100%; */
+            /* height: 100%; */
+            background-color: pink;
+
+            /* vw和vh  viewport width  viewport height  也是百分比 1vw 视口宽度1% */
+            width: 100vw;
+            height: 100vh;
+            /* 跟视口有关单位就会使用vw 和 vh
+            1. 实现一个元素全屏 （全屏遮罩层）
+            2. 全屏滚动
+            3. 实现屏幕适配结合rem */
+            /* vmin vmax  vmin视口的最小边的 百分比 vmax视口的最大边的百分比 */
+            /* 如果宽度比高度小 100vmin表示宽度 */
+            /* width: 100vmin; */
+            /* height: 100vmax; */
+            /* 如果手机横过来 高度比宽度小 100vmin表示高度 */
+            /* height: 100vmin;
+            width: 100vmax; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+
+        <div class="div2">
+            <div class="div3">
+                <div class="div4"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

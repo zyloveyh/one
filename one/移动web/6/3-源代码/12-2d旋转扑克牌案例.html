@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 600px;
+            height: 600px;
+            background-color: #ccc;
+            position: relative;
+        }
+
+        img {
+            width: 200px;
+            height: 300px;
+            border: 1px solid red;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* 如果需要同时位移渲染把2个属性放到一起 */
+            transform: translate(-50%, -50%);
+           
+            transition: all 10s;
+            /* 旋转中心 */
+            transform-origin: right bottom;
+            /* transform:; */
+            /* background: red; */
+            /* background: url(./images/man.png); */
+            /* background: red  url(./images/man.png); */
+        }
+
+        .box:hover img:nth-child(1) {
+            transform: translate(-50%, -50%) rotate(90deg);
+            z-index: 5;
+            
+        }
+
+        .box:hover img:nth-child(2) {
+            transform: translate(-50%, -50%) rotate(70deg);
+            z-index: 4;
+          
+        }
+
+        .box:hover img:nth-child(3) {
+            transform: translate(-50%, -50%) rotate(50deg);
+            z-index: 3;
+         
+        }
+
+        .box:hover img:nth-child(4) {
+            transform: translate(-50%, -50%) rotate(20deg);
+            z-index: 2;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./案例/2D转换/img/pk1.png" alt="">
+        <img src="./案例/2D转换/img/pk1.png" alt="">
+        <img src="./案例/2D转换/img/pk1.png" alt="">
+        <img src="./案例/2D转换/img/pk1.png" alt="">
+    </div>
+</body>
+
+</html>

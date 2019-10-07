@@ -1,0 +1,60 @@
+@import 'base.less';
+@color: red;
+
+// less的嵌套可以像标签一样在里面写嵌套 不用重复 修改起来很方便 层次清晰
+// 最终还是会变成普通的CSS嵌套 只是在写代码和维护代码可以方便快捷
+#nav {
+    padding: 10px 0;
+
+    >ul {
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        >li {
+            float: left;
+            width: 25%;
+            list-style: none;
+
+            >a {
+                display: block;
+                text-align: center;
+
+                >img {
+                    width: 40px;
+                }
+
+                >p {
+                    font-size: 14px;
+                    margin: 5px 0;
+                }
+
+                // &在a里面表示当前a
+                &:hover {
+                    color: green;
+                }
+            }
+
+            // a:hover{
+
+            // }
+
+            // &符号当前的选择器 在谁里面的表示谁
+            // 当前在li里面的&表示li
+            &.active {
+                a {
+                    p {
+                        color: @color;
+                    }
+                }
+            }
+        }
+
+        // 交集选择器
+
+    }
+}
+
+// 伪元素 伪类 交集选择器 li.active 使用&符号 使用&符号在当前需要加的元素里面写 &在谁里面表示谁

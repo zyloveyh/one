@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* []表示属性选择器 
+        里面写属性 只要有这个属性就选中
+        属性=值 有这个属性并且值也相等
+        属性^=值 有这个属性开头等于这个值
+        属性$=值 有这个属性 并且结尾等于这个值
+        属性*=值 有这个属性 并且中间包含这个值 */
+        /* [href] {
+            color: red;
+        } */
+        /* [href^="a"]{
+            color:red;
+        } */
+        /* [href$="html"]{
+            color:red;
+        } */
+        [href$="txt"]{
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 通过标签的属性选择元素 -->
+    <a href="a.html">a.html</a>
+    <a href="b.html">b.html</a>
+    <a href="a.txt">a.txt</a>
+    <a href="b.txt">b.txt</a>
+    <a href="ccccaaaa.html">ccccaaaa.html</a>
+    <a href="ddddbbbb.html">ddddbbbb.html</a>
+</body>
+
+</html>

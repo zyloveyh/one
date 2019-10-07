@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 20px auto;
+            color:#fff;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin: 20px auto;
+            color:#fff;
+        }
+        .box2:hover{
+            /* 如果把盒子放大内容没有变大 */
+            /* width: 200px;
+            height: 200px; */
+            /* CSS3 2d转换整体缩放 scale */
+            /* scale 表示缩放 默认1不缩放  0.5 缩小0.5  2 放大2倍 值越大放大越大 值越小缩得越小 */
+            /* 缩放不会影响盒子真实大小 只是看到的变大了 不会影响元素布局也是标准流 */
+            transform: scale(2);
+        }
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin: 20px auto;
+            color:#fff;
+        }
+        .box3:hover{
+            /* 如果把盒子放大内容没有变大 */
+            /* width: 200px;
+            height: 200px; */
+            /* CSS3 2d转换整体缩放 scale */
+            /* scale 表示缩放 默认1不缩放  0.5 缩小0.5  2 放大2倍 值越大放大越大 值越小缩得越小 */
+            transform: scale(0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 缩放就是把元素放大或者缩小 -->
+    <div class="box1">
+        文字
+    </div>
+    <div class="box2">
+        文字
+    </div>
+    <div class="box3">
+        文字
+    </div>
+</body>
+
+</html>

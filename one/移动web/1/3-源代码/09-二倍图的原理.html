@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 添加了视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        p{
+            font-size: 16px;
+        }
+        .img2{
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <p> 我们的网页是参照视口写px</p>
+    <p> 但是分辨率比视口大2倍或者3倍 </p>
+    <p> 如果2倍 网页在分辨率里面就会放大2倍</p>
+    <p> 如果3倍 网页在分辨率里面就会放大3倍</p>
+    <p> 文字等矢量图放大了之后不会 包括字体图标放大了都不会失真</p>
+    <p> 但是非矢量例如图片放大就失真了</p>
+    <p> 以后使用图片如果是2倍图片缩小2倍写 如果3倍图缩小3倍</p>
+    <p> 如何分辨2倍图还是3倍 根据设计稿 来看 设计稿是真实手机2倍就是2倍图 3倍就是3倍图  <br>
+        常见设计稿 750 * 1334 2倍图 (目前主流) <br>
+                  1080 * 1920 3倍图 <br>
+    </p>
+
+    <div></div>
+    <p>文字文字文字</p>
+    <img src="./jd/images/nav0.png" alt="">
+    <img src="./jd/images/nav0.png" alt="" class="img2">
+</body>
+
+</html>

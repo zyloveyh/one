@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 3个子盒子 屏幕宽度大于750 需要分成3列
+                 屏幕宽度小于750 需要分成1列 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .box .child {
+            border: 1px solid red;
+            height: 100px;
+        }
+
+        /* 条件判断的顺序 如果使用min-width作为条件判断 可以把条件从小到大的写
+        当满足大屏幕判断（虽然小的也满足但是大的在后面把小覆盖）
+        当不满足大屏幕 (只有小屏幕能生效 也不会被人覆盖)
+        如果是max-width 作为条件判断 和min-width相反 把条件从大到小写
+        当满足更小屏幕 更小会把更大的覆盖
+        
+        */
+        /* 总结 写判断条件的顺序   
+            1. min-width 从小到大写   大把小的覆盖 向下覆盖
+            2. max-width 从大到小写   小的把大的覆盖 向上覆盖 */
+        /* 1300 虽然会满足大于768 也会满足大于992 也会满足大于1200 由于1200样式写在了最后面 
+        因为CSS层叠性 后面的生效的样式会把前面生效的样式覆盖*/
+        @media(min-width:1200px) {
+            .box .child {
+                width: 25%;
+            }
+        }
+
+        @media(max-width:1200px) {
+            .box .child {
+                width: 33.33%;
+            }
+        }
+
+        @media(max-width:992px) {
+            .box .child {
+                width: 50%;
+            }
+        }
+
+        @media(max-width:768px) {
+            .box .child {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 现在使用响应式需要兼容4种
+    大屏幕  w>1200 大屏幕 宽度大于1200 （目前所用笔记本或者大电脑）
+    中屏幕  w>992 w<1200  中屏幕宽度大于992 小于1200 (老款台式机)
+    小屏幕  w>768 w<992   小屏幕宽度大于768 小于992  (ipad 平板电脑)
+    超小屏幕 w<768        超小屏幕宽度小于768       (手机) -->
+    <!-- 大屏幕的时候一行放4个div  25%
+        中屏幕的时候 一行需要放3个div   33.33%
+        小屏幕的时候 一行需要放2个div  50%
+        超小屏幕的时候 一行需要放1个div 100% -->
+    <div class="box">
+
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+    </div>
+</body>
+
+</html>

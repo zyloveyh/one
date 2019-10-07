@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .fc{
+            width: 240px;
+            margin: 50px auto;
+            position: relative;
+        }
+        .fc .wrapper{
+            width:240px;
+            height: 240px;
+            position: relative;
+            animation: fc 4s linear infinite;
+            z-index: 1;
+        }
+        @keyframes fc {
+            0%{}
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        .fc .wrapper .item{
+            width: 60px;
+            height: 120px;
+            border-radius: 0 60px 60px 0;
+            position: absolute;
+            left: 120px;
+            top: 120px;
+            transform-origin: left top;
+        }
+        .fc .wrapper .item:nth-child(1){
+            background: pink;
+        }
+        .fc .wrapper .item:nth-child(2){
+            background: greenyellow;
+            transform: rotate(90deg);
+        }
+        .fc .wrapper .item:nth-child(3){
+            background: plum;
+            transform: rotate(180deg);
+        }
+        .fc .wrapper .item:nth-child(4){
+            background: burlywood;
+            transform: rotate(270deg);
+        }
+        .fc .bar{
+            width: 20px;
+            height: 300px;
+            background: #000;
+            position: absolute;
+            left: 50%;
+            top: 120px;
+            margin-left: -10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fc">
+        <div class="wrapper">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div class="bar"></div>
+    </div>
+</body>
+</html>

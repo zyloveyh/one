@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 360px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    1. 像素： 就是显示图像最小单元 一格一格 正方形
+    2. 像素的分类
+        1. 物理像素： 分辨率像素 一个设备的分辨率最多能够放下多少px 
+            例如iphone6 7 8 分辨率是 750 * 1334 水平能够放下750个px 垂直能过放下1334个px
+        2. 设备独立像素: 真实像素 设备尺寸真实宽高能过放下的px
+        3. 逻辑像素： css像素 由程序员定义的像素 前端参照是视口
+
+    3. 像素之间的关系
+        1. 真实像素 和 CSS 写移动端第一个会添加视口 设置width=device-width 设备宽度(真实设备的宽度)
+            CSS像素  == 真实像素
+        2. 分辨率像素 和 真实像素关系
+            分辨率 1920 * 1080
+            真实像素 640 * 360
+            这种三星手机 分辨率是 真实像素 3倍
+            苹果手机 分辨率是 750 * 1334  真实手机  375 * 667 分辨率是真实像素的2倍
+        3. 作为前端开发不管分辨率 只管真实像素（只管视口）
+    4. 移动端2倍3倍图的原理
+        
+</body>
+</html>

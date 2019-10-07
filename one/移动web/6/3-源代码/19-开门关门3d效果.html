@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 400px;
+            height: 400px;
+            background-color: #ccc;
+            position: relative;
+            margin: 100px auto;
+            /* 使用3d一定要设置 透视 才能让3的转换有立体感 */
+            perspective: 1000px;
+
+        }
+
+        .left {
+            width: 200px;
+            height: 400px;
+            left: 0;
+            top: 0;
+            border: 2px solid red;
+            /* transform: rotateY(30deg); */
+            /* 左边的门绕着左边的中心点旋转 */
+            transform-origin: left center;
+        }
+
+        .right {
+            width: 200px;
+            height: 400px;
+            right: 0;
+            top: 0;
+            border: 2px solid green;
+            /* transform: rotateY(-30deg); */
+            /* 右边的门绕着右边的中心点旋转 */
+            transform-origin: right center;
+        }
+
+        .box:hover .left {
+
+            transform: rotateY(90deg);
+
+        }
+
+        .box:hover .right {
+            transform: rotateY(-90deg);
+
+        }
+        .top{
+            width: 400px;
+            height: 200px;
+            right: 0;
+            top: 0;
+            border: 2px solid yellow;
+            /* transform: rotateY(-30deg); */
+            /* 右边的门绕着右边的中心点旋转 */
+            transform-origin: center top;
+        }
+
+        .box:hover .top {
+           
+            transform: rotateX(-90deg);
+
+        }
+        .bottom{
+            width: 400px;
+            height: 200px;
+            right: 0;
+            bottom: 0;
+            border: 2px solid pink;
+            /* transform: rotateY(-30deg); */
+            /* 右边的门绕着右边的中心点旋转 */
+            transform-origin: center bottom;
+            
+        }
+        .box:hover .bottom {
+           
+            transform: rotateX(90deg);
+
+        }
+        .box div{
+            position: absolute;
+            text-align: center;
+            color:#fff;
+            transition: all 1s;
+        }
+        /* .box:hover .right {
+            transform: rotateX(-90deg);
+
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left">
+            左边
+        </div>
+        <div class="right">
+            右边
+        </div>
+        <div class="top">
+            上面
+        </div>
+        <div class="bottom">
+            下面
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   1. 移动web 手机浏览器打开网页
+   2. 移动web 和 PC web 区别：  页面大小不一样 移动web小 兼容手机 PCweb大兼容电脑 
+    移动web全屏布局 PCweb固定宽高
+   3. 移动web和移动App的区别
+    1. 移动web  webApp 在浏览器里面打开的网页
+    2. 原生App Native App  需要下载和安装的应用程序 使用原生语言开发的
+    3. 混合App hybrid App  需要下载安装 有App外壳（原生语言写的） 里面嵌套一些网页
+   4. 移动web开发方式
+    1. 响应式开发方式： 只需要写一个页面同时在多个终端上兼容适配（自己跟随屏幕变化变化布局）
+    2. 原生移动web开发方式： 分别针对手机和电脑 写2套页面 一个在手机端运行 一个在电脑端运行
+        移动站点 m.xx.com
+        PC站点 www.xx.com   
+    5. 移动web调试方式
+        1. 使用浏览器自带模拟器调试
+        2. 真机调试(写完项目再讲)
+    6. 移动端的浏览器
+        1. 虽然移动端有很多款浏览器 大部分浏览器内核都是webkit内核（重点兼容考虑webkit）
+    7. 移动开发基础 概念   
+        1. 视口 ： 就是包裹我们网页的一个容器
+            1. 在PC端视口大小和可视大小一样
+            2. 在手机端默认视口大小是一个固定值980 不管什么手机都是980
+        2. 视口980原因： 因为早期没有移动web页面 为了让手机能够完全显示PC也才有了980视口默认值
+        3. 现在针对手机开发 不会再写死980宽度 不需要默认视口设置视口（只有手机端设置了才有用）
+        4. 视口的设置1
+            通过meta标签设置
+            name="viewport" 设置视口
+            content设置视口的属性配置
+            width 设置视口宽度 device-width
+            initial-scale 初始化缩放 1
+            user-scalable 是否允许用户缩放 no
+            minimum 最小缩放 1
+            maximum 最大缩放 1
+            meta:vp 使用快捷键快速打出来
+            <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    8. 搭建jd移动端主页项目
+        1. 只要创建一个jd项目文件夹
+        2. 把图片拷贝到里面
+        3. 创建主页index.html
+        4. 写视口
+        5. 引入样式文件
+        6. 样式初始化base.css 主要样式之前一样 去掉默认样式
+            1. 移动端不能出现滚动条 设置盒子模型包含border 和 padding
+                box-sizing:border-box;
+            2. 移动端a等都能够点击的会有一个高亮背景色
+                -webkit-tap-highlight-color:transparent;
+                
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            background-color: #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+        .child{
+            width: 100px;
+            height: 100px;
+            position: absolute;                    
+            background-color: pink;
+            /* 表示走父元素宽度的一半 */
+            left: 50%;
+            top: 50%;
+             /* 还可以设置百分比值 百分比参照的是自己  第一值宽度百分比 第二个是高度百分比*/
+            transform: translate(-50%,-50%);
+            /* 设置margin-left自身的一半 */
+            /* margin-left: -100px; */
+            /* 设置位移为往左走-100px */
+            /* transform: translate(-50px,0); */
+           
+            
+            /* 原理先通过定位值 left 50% top:50% 往右和往下走到父元素宽度一半和高度的一半
+            在通过自身位移往左走自身宽度一半 往上走自身高度一半 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 实现一个定位元素水平垂直居中 而且(元素宽高变了也能)自适应 -->
+    <div class="box">
+        <div class="child"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+// 这是定义变量的一个less文件 variable单词就是变量的意思
+// @符号开头 变量不能中文 不能是一些特殊符号 只能CSS属性名写的东西 还有数字 单词+数字 以单词开头
+// 属性的值可以CSS里面能够写的任意值
+@color: pink;
+// @color-red: #ff0000;
+// @color1: #ff0000;
+@w5: 50%;
+// 主要变量在颜色用的比较多
+// 背景色
+// 边框色
+// 字体颜色
+
+h1 {
+    // 使用变量 变量都在属性后写的 也要带@符号
+    color: @color;
+    width: @w5;
+}
+
+p {
+    color: @color;
+    width: @w5;
+}
+
+ul li {
+    color: @color;
+    width: @w5;
+}
+
+.box2 span {
+    color: @color;
+    width: @w5;
+}

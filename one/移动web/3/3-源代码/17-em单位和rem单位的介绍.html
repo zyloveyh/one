@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>    
+        .em{
+            /* 1em == 16px  因为默认文字大小是16px */
+            font-size: 16px;
+            width: 10em;
+            height: 10em;
+            background-color: #ccc;
+        }
+        html{
+            /* rem参照根元素也就是html元素
+            默认根元素字体大小也是16px 1rem默认也是16px */
+            /* 让根元素随着屏幕变化而变化 */
+            /* font-size: 16px; */
+            /* vw相对视口 是一个相对单位 */
+            font-size: 10vw;
+        }
+        .rem{
+            font-size: 16px;
+            width: 10rem;
+            height: 10rem;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    em: element 元素 参照当前元素(相对单位) 参照当前元素字体大小
+    <div class="em">
+        em
+    </div>
+    rem: root element 根元素 参照是根元素(相对单位) 参照根元素的字体大小
+    <div class="rem">
+        rem
+    </div>
+    <div class="rem">
+        rem
+    </div>
+</body>
+</html>

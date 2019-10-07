@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: #333 ;
+        }
+        .map{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 747px;
+            height: 614px;
+            transform: translate(-50%,-50%);
+            background:url("images/map.png") no-repeat center center;
+        }
+        .city{
+            position: absolute;
+            left: 525px;
+            top: 222px;
+            color: #fff;
+            font-size: 12px;
+            padding-left: 40px;
+        }
+        .city .dot{
+            width: 8px;
+            height: 8px;
+            background: #09f;
+            border-radius: 4px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .city [class^="pulse"]{
+            box-sizing: border-box;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #009fd9;
+            animation: pulse 1.2s linear infinite;
+        }
+        .city .pulse1{
+            animation-delay: 0.2s;
+        }
+        .city .pulse1{
+            animation-delay: 0.4s;
+        }
+        .city .pulse1{
+            animation-delay: 0.6s;
+        }
+        @keyframes pulse {
+            0%{
+
+            }
+            70%{
+                width: 50px;
+                height: 50px;
+                opacity: 1;
+            }
+            100%{
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+        .tb{
+            left: 635px;
+            top: 485px;
+        }
+        .gz{
+            left: 520px;
+            top: 535px;
+        }
+    </style>
+</head>
+<body>
+    <div class="map">
+        <div class="city">
+            <span class="dot"></span>
+            <span>北京</span>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city tb">
+            <span class="dot"></span>
+            <span>台北</span>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city gz">
+            <span class="dot"></span>
+            <span>广州</span>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+    </div>
+</body>
+</html>

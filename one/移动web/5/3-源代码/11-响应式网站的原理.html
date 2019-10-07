@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 媒体查询        
+        @media(判断条件){
+            判断条件就会执行的样式
+        } */
+        /* 判断条件怎么写
+        width:值 表示宽度== 某个值 单位一般px
+        min-width:值 表示最小宽度大于等于某个值 单位一般是px
+        max-width:值 表示最大宽度小于等于某个值
+        条件成立了之后要执行什么样式 */
+        /* 这种情况比较少用 */
+        @media(width:750.4px){
+            /* 大括号里面可以写任意CSS代码 选择器 { 属性 值}  默认情况这里面的CSS代码不会执行 */
+            body{
+                background-color: red;
+            }
+        }
+        /* 表示屏幕宽度大于等于750以上就成立 */
+        @media(min-width:750px){
+            body{
+                background-color: green;
+            }
+        }
+        @media(max-width:750px){
+            body{
+                background-color: blue;
+            }
+        }
+ 
+    </style>
+</head>
+<body>
+    <!-- 1. 一个页面同时适配多个终端
+        PC 和 移动端布局有点不一样
+    2. 假如一个div元素 里面有3个div子元素 
+        在屏幕大的时候 一行放3个div
+        屏幕小的时候 一行只放1个div
+    3. 导航条 屏幕大 横着显示 屏幕下竖着的
+
+    如何实现响应式开发 使用一个属性 CSS的媒体查询 
+    判断屏幕宽度来实现不同屏幕适配方案
+     
+    媒体查询判断屏幕大小来设置满足屏幕大小才需要设置的样式 -->
+    
+</body>
+</html>

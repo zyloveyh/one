@@ -1,0 +1,307 @@
+/* base.css样式初始化文件 放了一些常见样式初始化 和移动端样式初始化 和 公共类名 */
+/* 把所有标签的间距去掉 开发为了方便先写* 号后面如果上线固定只有这些标签把*号在换成每个标签 */
+* {
+  margin: 0;
+  padding: 0;
+  /* 移动端一定要设置核心模型计算方式为border-box 防止边框padding撑大盒子 出现横向滚动条
+   因为移动端禁止出现横向滚动条 */
+  box-sizing: border-box;
+  /* 去掉移动端能过点击元素的高亮颜色 改成透明就去掉了  只有当按住了才有 */
+  -webkit-tap-highlight-color: transparent;
+}
+li {
+  /* 去掉li的小圆点 */
+  list-style: none;
+}
+a {
+  /* 去掉a的下划线 */
+  text-decoration: none;
+  /* 改变a的默认颜色 */
+  color: #666;
+}
+input {
+  /* 去掉输入的外边框 */
+  border: 0;
+  /* 去掉输入框的内边框 */
+  outline: 0;
+}
+img {
+  /* 解决图片和块级元素之间的间隙问题 */
+  vertical-align: middle;
+}
+/* 清除浮动的类名 给父容器加了在父容器里面多出一个伪元素 这个伪元素设置清除浮动 会让父元素有高度 */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* 公共边框样式 */
+.bl {
+  border-left: 1px solid #ccc;
+}
+.br {
+  border-right: 1px solid #ccc;
+}
+.bb {
+  border-bottom: 1px solid #ccc;
+}
+.bt {
+  border-top: 1px solid #ccc;
+}
+/* 公共的图标样式 */
+/* 选中所有类名以icon-开头的元素 */
+[class^="icon-"] {
+  background-image: url(../images/sprites.png);
+  background-size: 200px 200px;
+}
+/* CSS的注释编译了会保留 */
+/* 过顺丰到付 */
+#header {
+  padding-left: 80px;
+  padding-right: 50px;
+  height: 40px;
+  /* 给头部固定在顶部 */
+  position: fixed;
+  left: 0;
+  top: 0;
+  /* 定位会没有默认100%宽度需要手动设置100%宽度 */
+  width: 100%;
+}
+#header .left {
+  width: 80px;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#header .left .icon-logo {
+  display: block;
+  width: 58px;
+  height: 22px;
+  /* 调整背景图定位来定位到想要图片的位置 背景图变小了背景图定位也变小了 */
+  background-position: 0 -110px;
+  /* 设置margin让图标在里面居中 */
+  margin: 9px auto;
+}
+#header .center form {
+  padding-top: 5px;
+  position: relative;
+}
+#header .center form .icon-search {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 5px;
+  top: 10px;
+  background-position: -60px -110px;
+}
+#header .center form input {
+  width: 100%;
+  height: 30px;
+  /* margin-top: 5px; */
+  /* 圆角只有高度的一半 */
+  border-radius: 15px;
+  padding-left: 30px;
+}
+#header .right {
+  width: 50px;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#header .right .login {
+  color: #fff;
+  display: block;
+  text-align: center;
+  line-height: 40px;
+}
+/* 轮播图区域的样式 */
+#slide img {
+  width: 100%;
+}
+/* 导航条区域的样式 */
+#nav {
+  padding: 10px 0;
+}
+#nav ul li {
+  float: left;
+  /* 使用百分比写宽度 */
+  width: 25%;
+}
+#nav ul li a {
+  display: block;
+  text-align: center;
+}
+#nav ul li a img {
+  width: 40px;
+}
+#nav ul li a p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+/* 主体商品布局 */
+#main {
+  background-color: #eee;
+  padding: 10px;
+  /* 让main距离底部有50px间距 */
+  /* margin-bottom: 50px; */
+  /* 让main里面内容往上走60px */
+  padding-bottom: 60px;
+  /* 秒杀商品的样式 */
+  /* 京东超市的样式 */
+}
+#main .seckill {
+  background-color: #fff;
+  /* 设置盒子阴影  阴影不占大小 有立体感 */
+  box-shadow: 0px 0px 2px #666;
+}
+#main .seckill .title {
+  line-height: 30px;
+}
+#main .seckill .title .icon-clock {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+  margin-left: 5px;
+  background-position: -158px -72px;
+}
+#main .seckill .title .seckill-name {
+  float: left;
+  color: #de181b;
+  font-size: 14px;
+  margin-left: 5px;
+}
+#main .seckill .title .down-time {
+  float: left;
+  margin-left: 5px;
+}
+#main .seckill .title .down-time span:not(:nth-child(3n)) {
+  background-color: #000;
+  color: #fff;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+  display: inline-block;
+}
+#main .seckill .title .seckill-more {
+  float: right;
+  margin-right: 5px;
+  font-size: 14px;
+}
+#main .seckill .content ul li {
+  float: left;
+  width: 33.3333%;
+  /* ~相邻的后面的所有兄弟 */
+}
+#main .seckill .content ul li ~ li {
+  border-left: 1px solid #ccc;
+}
+#main .seckill .content ul li a {
+  display: block;
+  text-align: center;
+}
+#main .seckill .content ul li a img {
+  width: 110px;
+}
+#main .seckill .content ul li a p {
+  font-size: 12px;
+}
+#main .seckill .content ul li a p:first-of-type {
+  color: #de181b;
+}
+#main .seckill .content ul li a p:last-of-type {
+  color: #ccc;
+  text-decoration: line-through;
+}
+#main .jd-market {
+  margin-top: 10px;
+  box-shadow: 0px 0px 2px #666;
+  background-color: #fff;
+}
+#main .jd-market .title {
+  position: relative;
+}
+#main .jd-market .title h4 {
+  padding-left: 30px;
+  line-height: 30px;
+  font-weight: normal;
+  border-bottom: 1px solid #ccc;
+}
+#main .jd-market .title h4::before {
+  /* 伪元素就算没有内容也要写content */
+  content: '';
+  width: 4px;
+  height: 16px;
+  position: absolute;
+  left: 20px;
+  top: 6px;
+  background-color: #de181b;
+}
+#main .jd-market .content .left {
+  float: left;
+  width: 50%;
+}
+#main .jd-market .content .left a {
+  display: block;
+}
+#main .jd-market .content .left a img {
+  width: 100%;
+}
+#main .jd-market .content .right {
+  float: right;
+  width: 50%;
+}
+#main .jd-market .content .right a {
+  display: block;
+}
+#main .jd-market .content .right a img {
+  width: 100%;
+}
+/* 底部区域的样式 */
+#footer {
+  position: fixed;
+  /* 定位一定要设置定位值 */
+  left: 0;
+  bottom: 0;
+  /* 定位没有默认100%宽度需要手动设置 */
+  width: 100%;
+  background-color: #ccc;
+}
+#footer ul li {
+  float: left;
+  width: 25%;
+  height: 50px;
+}
+#footer ul li.active a span {
+  color: #de181b;
+}
+#footer ul li a {
+  display: block;
+  text-align: center;
+  padding: 5px 0;
+}
+#footer ul li a i {
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin: 0px auto;
+}
+#footer ul li a i.icon-home {
+  background-position: -30px -30px;
+}
+#footer ul li a i.icon-category {
+  background-position: -60px -30px;
+}
+#footer ul li a i.icon-cart {
+  background-position: -90px -30px;
+}
+#footer ul li a i.icon-user {
+  background-position: -120px -30px;
+}
+#footer ul li a span {
+  font-size: 12px;
+  line-height: 16px;
+}

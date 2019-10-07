@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            display: flex;
+            width: 200px;
+            margin: 100px auto;
+        }
+
+        li {
+            flex: 1;
+            height: 50px;
+            background-color: pink;
+            border-radius: 10px;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        li:hover {
+            background-color: skyblue;
+        }
+        /* 传统左右布局 */
+        .box {
+            width: 300px;
+            height: 200px;
+            background-color: #ccc;
+            margin: 20px auto;
+        }
+
+        .box .left {
+            width: 100px;
+            height: 200px;
+            float: left;
+            background-color: pink;
+        }
+
+        .box .right {
+            margin-left: 100px;
+            height: 200px;
+            background-color: skyblue;
+        }
+
+        /* 伸缩布局左右布局 */
+
+        .box1 {
+            display: flex;
+        }
+
+        .box1 .left {
+            width: 100px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .box1 .right {
+            /* flex:1 占据整个父元素里面设置了flex属性的元素的 1/总份数  现在总份数就是1  1/1  == 100% 
+            会减到没有设置flex大小*/
+            /* 占据父元素剩余宽度的100% */
+            flex: 1;
+            height: 200px;
+            background-color: skyblue;
+        }
+
+        /* 伸缩布局右左布局 */
+        .box2 {
+            margin: 20px auto;
+            display: flex;
+        }
+
+        .box2 .left {
+            /* flex:1 占据整个父元素里面设置了flex属性的元素的 1/总份数  现在总份数就是1  1/1  == 100% 
+            会减到没有设置flex大小*/
+            /* 占据父元素剩余宽度的100% */
+            flex: 1;
+            height: 200px;
+            background-color: skyblue;
+        }
+
+        .box2 .right {
+
+            width: 100px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        /* 伸缩布局左中右布局 */
+        .box3 {
+            margin: 10px auto;
+            display: flex;
+        }
+
+        .box3 .left {
+
+            width: 100px;
+            height: 200px;
+            background-color: pink;
+        }
+        .box3 .center{
+            flex:1;
+            background-color: skyblue;
+        }
+        .box3 .right {
+
+            width: 100px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 导航菜单 -->
+    <ul>
+        <li>导航1</li>
+        <li>导航2</li>
+    </ul>
+
+    <!-- 2. 实现圣杯布局双飞布局等 传统方式-->
+    <div class="box">
+        <div class="left">
+
+        </div>
+        <div class="right">
+
+        </div>
+    </div>
+    <!-- 3. 使用伸缩布局实现圣杯双飞翼布局 -->
+    <div class="box1">
+        <div class="left">
+
+        </div>
+        <div class="right">
+
+        </div>
+    </div>
+    <!-- 右左布局 -->
+    <div class="box2">
+        <div class="left">
+
+        </div>
+        <div class="right">
+
+        </div>
+    </div>
+    <!-- 左中右布局 -->
+    <div class="box3">
+        <div class="left">
+
+        </div>
+        <div class="center">
+
+        </div>
+        <div class="right">
+
+        </div>
+    </div>
+    <!-- 上中下布局 -->
+    <div class="box4">
+        <div class="top">
+
+        </div>
+        <div class="center">
+
+        </div>
+        <div class="bottom">
+
+        </div>
+    </div>
+</body>
+
+</html>

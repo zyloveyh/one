@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跑马灯</title>
+    <style>
+        body {
+            background: #777;
+        }
+
+        ul {
+            margin: 150px auto;
+            padding: 0;
+            width: 200px;
+            height: 300px;
+            list-style: none;
+            position: relative;
+
+            transform-style: preserve-3d;
+            transform: rotateX(-15deg);
+
+            animation: horse-race-lamp 18s linear infinite;
+        }
+
+        @keyframes horse-race-lamp {
+            from {
+                transform: rotateX(-15deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(-15deg) rotateY(360deg);
+            }
+        }
+
+        ul li {
+            position: absolute;
+            width: 200px;
+            height: 300px;
+            left: 0;
+            top: 0;
+        }
+
+        ul li img {
+            display: block;
+        }
+
+        ul li:nth-child(1) {
+            transform: rotateY(40deg) translateZ(275px);
+        }
+
+        ul li:nth-child(2) {
+            transform: rotateY(80deg) translateZ(275px);
+        }
+
+        ul li:nth-child(3) {
+            transform: rotateY(120deg) translateZ(275px);
+        }
+
+        ul li:nth-child(4) {
+            transform: rotateY(160deg) translateZ(275px);
+        }
+
+        ul li:nth-child(5) {
+            transform: rotateY(200deg) translateZ(275px);
+        }
+
+        ul li:nth-child(6) {
+            transform: rotateY(240deg) translateZ(275px);
+        }
+
+        ul li:nth-child(7) {
+            transform: rotateY(280deg) translateZ(275px);
+        }
+
+        ul li:nth-child(8) {
+            transform: rotateY(320deg) translateZ(275px);
+        }
+
+        ul li:nth-child(9) {
+            transform: rotateY(360deg) translateZ(275px);
+        }
+        ul:hover{
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><img src="images/1.png" alt=""></li>
+    <li><img src="images/2.png" alt=""></li>
+    <li><img src="images/3.png" alt=""></li>
+    <li><img src="images/4.png" alt=""></li>
+    <li><img src="images/5.png" alt=""></li>
+    <li><img src="images/6.png" alt=""></li>
+    <li><img src="images/7.png" alt=""></li>
+    <li><img src="images/8.png" alt=""></li>
+    <li><img src="images/9.png" alt=""></li>
+</ul>
+</body>
+</html>

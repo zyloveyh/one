@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            /* 百分比参照父元素 html父容器就是视口 */
+            width: 50%;
+            border: 1px solid red;
+        }
+
+        div {
+            /* div的百分比参照父元素body body参照html */
+            width: 50%;
+            height: 100px;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    在移动端 视口不是和手机真实屏幕窗口一样大
+    默认视口在移动端宽度980  但是手机真实窗口大小和屏幕一样比如iphone678 375
+    需要把一个980视口放到浏览器窗口里面造成视口缩放（视口缩放了网页也跟着缩放）
+
+    <div></div>
+</body>
+
+</html>

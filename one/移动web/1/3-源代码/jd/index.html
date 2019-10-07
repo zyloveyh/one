@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 1. 设置视口 设置一个完整视口（禁止用户缩放） -->
+    <!-- meta:vp 选择用户代码段后面的这个 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jd移动端的主页222</title>
+    <!-- 1. 在写页面的时候要引入样式初始化文件 防止页面样式出现问题 -->
+    <link rel="stylesheet" href="./css/base.css">
+    <!-- 2. 引入主页的样式文件 -->
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+    <!-- 推荐外面的容器使用id选择器 -->
+    <!-- 提示选择器优先级 避免层级问题 方便覆盖别人的样式
+        学习JS的时候 id是唯一的 方便后面JS操作元素 -->
+    <!-- 头部区域 -->
+    <header id="header">
+        <!-- 头部是左中右的布局 -->
+        <div class="left">
+            <!-- jd logo图标使用精灵图在样式中插入图片 -->
+            <a href="#" class="icon-logo"></a>
+        </div>
+        <div class="center">
+            <form action="#">
+                <!-- 图标一般使用i标签 如果需要点击的使用a标签 -->
+                <i class="icon-search"></i>
+                <!-- search也是一种输入框类型 搜索的输入框类型 让键盘右下角的文字变成搜索 -->
+                <input type="search" placeholder="请输入要搜索的商品">
+            </form>
+        </div>
+        <div class="right">
+            <a href="#" class="login">登录</a>
+        </div>
+    </header>
+    <!-- 轮播图区域 section区块 区域 容器区域使用section -->
+    <section id="slide">
+        <img src="./images/l1.jpg" alt="">
+    </section>
+    <!-- 导航条区域 nav导航标签 -->
+    <nav id="nav">
+        <!-- 因为子元素浮动了导致父元素没有高度需要清除浮动 -->
+        <ul class="clearfix">
+            <!-- li*8>a[href='#']>img[src="images/nav$.png"]+p{京东导航} -->
+            <li>
+                <a href="#">
+                    <img src="images/nav0.png" alt="">
+                    <p>京东导航</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/nav1.png" alt="">
+                    <p>京东导航</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/nav2.png" alt="">
+                    <p>京东导航</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/nav3.png" alt="">
+                    <p>京东导航</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/nav4.png" alt="">
+                    <p>京东导航</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/nav5.png" alt="">
+                    <p>京东导航</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/nav6.png" alt="">
+                    <p>京东导航</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/nav7.png" alt="">
+                    <p>京东导航</p>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+    <!-- 主体商品区域 使用main标签 主体内容使用main标签 -->
+    <main id="main">
+        <!-- 秒杀商品 -->
+        <div class="seckill">
+            <!-- 秒杀标题 -->
+            <div class="title clearfix">
+                <!-- 闹钟图标 -->
+                <i class="icon-clock"></i>
+                <span class="seckill-name">掌上秒杀</span>
+                <!-- 倒计时 -->
+                <div class="down-time">
+                    <span>0</span>
+                    <span>0</span>
+                    <span>:</span>
+                    <span>0</span>
+                    <span>0</span>
+                    <span>:</span>
+                    <span>0</span>
+                    <span>0</span>
+                </div>
+                <a href="#" class="seckill-more">更多></a>
+            </div>
+            <!-- 秒杀内容 -->
+            <div class="content">
+                <ul class="clearfix">
+                    <!-- li*3>a[href="#"]>img[src="images/seckill-img.jpg"]+p{￥6999.9}+p{￥7999.9} -->
+                    <li>
+                        <a href="#">
+                            <img src="images/seckill-img.jpg" alt="">
+                            <p>￥6999.9</p>
+                            <p>￥7999.9</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/seckill-img.jpg" alt="">
+                            <p>￥6999.9</p>
+                            <p>￥7999.9</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/seckill-img.jpg" alt="">
+                            <p>￥6999.9</p>
+                            <p>￥7999.9</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

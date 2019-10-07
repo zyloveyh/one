@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 把所有标签的间距去掉 开发为了方便先写* 号后面如果上线固定只有这些标签把*号在换成每个标签 */
+        * {
+            margin: 0;
+            padding: 0;
+            /* 移动端一定要设置核心模型方式为border-box 防止边框padding撑大盒子 出现横向滚动条
+            因为移动端禁止出现横向滚动条 */
+            box-sizing: border-box;
+            /* 去掉移动端能过点击元素的高亮颜色 改成透明就去掉了  只有当按住了才有 */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        li {
+            /* 去掉li的小圆点 */
+            list-style: none;
+        }
+
+        a {
+            /* 去掉a的下划线 */
+            text-decoration: none;
+            /* 改变a的默认颜色 */
+            color: #666;
+        }
+        input{
+            /* 去掉输入的外边框 */
+            border:0;
+            /* 去掉输入框的内边框 */
+            outline: 0;
+        }
+        img{
+            /* 解决图片和块级元素之间的间隙问题 */
+            vertical-align: middle;
+        }
+        /* 清除浮动的类名 给父容器加了在父容器里面多出一个伪元素 这个伪元素设置清除浮动 会让父元素有高度 */
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        div{
+            border:1px solid red;
+        }
+        li{
+            float: left;
+        }
+
+        ul::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+         div div{
+             float: left;
+         }
+         div{
+             width: 100%;
+         }
+    </style>
+</head>
+
+<body>
+    <!-- 样式初始化的目的为了保证页面在不同浏览器显示效果都一样
+    去掉一些默认浏览器加的CSS body间距 小圆点 a下划线等
+    一些自己写类名 清除浮动等一些比较常见的类名 -->
+    <h1>fsf</h1>
+    <ul class="clearfix">
+        <li>fsfsd</li>
+        <li>fsfsd</li>
+        <li>fsfsd</li>
+        <li>fsfsd</li>
+        <li>fsfsd</li>
+        <li>fsfsd</li>
+    </ul>
+    <a href="#">
+        超链接
+    </a>
+    <input type="text" placeholder="请输入">
+    <div>
+        文字 <img src="./jd/images/nav0.png" alt="">
+    </div>
+    <div class="clearfix">
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+    </div>
+</body>
+
+</html>

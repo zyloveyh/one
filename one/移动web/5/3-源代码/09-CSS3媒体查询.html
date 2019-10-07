@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 判断屏幕宽度== 375px */
+        @media(width:375.2px){
+            /* html字体大小必须满足了这个条件才会生效这个样式 */
+            html{
+                font-size: 100px;
+            }
+        }
+        @media(width:750.4px){
+            /* html字体大小必须满足了这个条件才会生效这个样式 */
+            html{
+                font-size: 200px;
+            }
+        }
+
+        /* 不管是vw还是媒体查询 目的都是为了让根元素跟随屏幕变化而变化 */
+        /* 利用媒体查询也可以做到根据屏幕大小 判断 设置html的字体大小 */
+        div{
+            width: 1rem;
+            height: 1rem;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!-- 查询媒体设备的 来作为判断条件   设置对应的样式
+    屏幕是媒体 (重点)
+    打印机也是媒体
+    等
+    作用就是可以判断屏幕宽度设置不同的样式
+    需要375 根元素 100px
+    需要在750 根元素 200px -->
+    文字
+    <div></div>
+</body>
+</html>

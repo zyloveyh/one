@@ -1,0 +1,244 @@
+/* 引入公共样式 */
+/* base.css样式初始化文件 放了一些常见样式初始化 和移动端样式初始化 和 公共类名 */
+/* 把所有标签的间距去掉 开发为了方便先写* 号后面如果上线固定只有这些标签把*号在换成每个标签 */
+* {
+  margin: 0;
+  padding: 0;
+  /* 移动端一定要设置核心模型计算方式为border-box 防止边框padding撑大盒子 出现横向滚动条
+   因为移动端禁止出现横向滚动条 */
+  box-sizing: border-box;
+  /* 去掉移动端能过点击元素的高亮颜色 改成透明就去掉了  只有当按住了才有 */
+  -webkit-tap-highlight-color: transparent;
+}
+html {
+  font-size: 26.6667vw;
+}
+body {
+  font-size: 0.14rem;
+}
+li {
+  /* 去掉li的小圆点 */
+  list-style: none;
+}
+a {
+  /* 去掉a的下划线 */
+  text-decoration: none;
+  /* 改变a的默认颜色 */
+  color: #666;
+}
+input {
+  /* 去掉输入的外边框 */
+  border: 0;
+  /* 去掉输入框的内边框 */
+  outline: 0;
+}
+img {
+  /* 解决图片和块级元素之间的间隙问题 */
+  vertical-align: middle;
+}
+/* 清除浮动的类名 给父容器加了在父容器里面多出一个伪元素 这个伪元素设置清除浮动 会让父元素有高度 */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+body {
+  background-color: #eee;
+}
+/* 头部区域的样式 */
+#header {
+  display: flex;
+}
+#header .left {
+  flex: 1;
+}
+#header .left form {
+  padding: .1rem;
+  /* 能直接设置百分比就不需要使用rem */
+  height: 100%;
+  position: relative;
+}
+#header .left form .icon-search {
+  position: absolute;
+  left: .18rem;
+  top: .18rem;
+  font-size: .14rem;
+}
+#header .left form input {
+  width: 100%;
+  box-shadow: 0px 0px 0.03rem #666;
+  height: 100%;
+  padding-left: .3rem;
+  font-size: .14rem;
+}
+#header .right {
+  width: .5rem;
+  height: .5rem;
+}
+#header .right a {
+  /* a的高度也要和父元素right一致 */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: skyblue;
+}
+#header .right a i {
+  font-size: .14rem;
+}
+/* 轮播图区域的样式 */
+#slide a {
+  display: block;
+}
+#slide a img {
+  width: 100%;
+}
+/* 导航区域样式 */
+#nav {
+  padding: .05rem;
+  /* 景点区域 */
+  /* 并集选择器 酒店区域  飞机区域 旅游区域*/
+}
+#nav .local {
+  background-color: #fff;
+  border-radius: .05rem;
+}
+#nav .local ul {
+  display: flex;
+  height: .6rem;
+}
+#nav .local ul li {
+  flex: 1;
+}
+#nav .local ul li a {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#nav .local ul li a i {
+  width: .32rem;
+  height: .32rem;
+  background-image: url(../images/nav_local.png);
+  background-size: .32rem 1.6rem;
+}
+#nav .local ul li a i.icon-local2 {
+  background-position: 0 -0.32rem;
+}
+#nav .local ul li a i.icon-local3 {
+  background-position: 0 -0.64rem;
+}
+#nav .local ul li a i.icon-local4 {
+  background-position: 0 -0.96rem;
+}
+#nav .local ul li a i.icon-local5 {
+  background-position: 0 -1.28rem;
+}
+#nav .local ul li a span {
+  font-size: .12rem;
+}
+#nav .hotel,
+#nav .plane,
+#nav .travel {
+  display: flex;
+  height: .88rem;
+  margin-top: .05rem;
+  border-radius: .05rem;
+}
+#nav .hotel .left,
+#nav .plane .left,
+#nav .travel .left {
+  flex: 1;
+}
+#nav .hotel .left a,
+#nav .plane .left a,
+#nav .travel .left a {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  color: #fff;
+  /* 里面文字垂直不是居中 使用padding稍微往下挤一点点 */
+  padding-top: .12rem;
+  /* 原图是3倍图要注意缩小3倍去写 */
+  background-size: 1.2rem 0.46rem;
+  /* 去掉重复 */
+  background-repeat: no-repeat;
+  /* 把背景图定位到水平居中 垂直居下 */
+  background-position: center bottom;
+}
+#nav .hotel .right,
+#nav .plane .right,
+#nav .travel .right {
+  flex: 2;
+  display: flex;
+  /* 右边2行需要换行并且使用百分比宽度 */
+  flex-wrap: wrap;
+}
+#nav .hotel .right a,
+#nav .plane .right a,
+#nav .travel .right a {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-left: 0.01rem solid #fff;
+}
+#nav .hotel .right a:nth-last-child(n+3),
+#nav .plane .right a:nth-last-child(n+3),
+#nav .travel .right a:nth-last-child(n+3) {
+  border-bottom: 0.01rem solid #fff;
+}
+#nav .hotel {
+  background-color: orange;
+}
+#nav .hotel .left a {
+  /* 酒店背景图 */
+  background-image: url(../images/hotel.png);
+}
+#nav .plane {
+  background-color: skyblue;
+}
+#nav .plane .left a {
+  /* 机票背景图 */
+  background-image: url(../images/flight.png);
+}
+#nav .travel {
+  background-color: yellowgreen;
+}
+#nav .travel .left a {
+  /* 旅游背景图 */
+  background-image: url(../images/travel.png);
+}
+/* 广告区域样式 */
+#banner {
+  display: flex;
+  /* 有多行要设置换行 */
+  flex-wrap: wrap;
+}
+#banner a {
+  width: 50%;
+}
+#banner a img {
+  width: 100%;
+}
+#banner a:nth-child(even) {
+  border-left: 0.01rem solid #ccc;
+}
+#banner a:nth-last-child(n+3) {
+  border-bottom: 0.01rem solid #ccc;
+}
+/* 底部区域样式 */
+#footer {
+  display: flex;
+  height: .5rem;
+  /* 设置垂直排列 分2行 */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#footer p {
+  font-size: .12rem;
+}

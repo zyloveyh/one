@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            margin: 200px auto;
+            background-color: rgba(255, 0, 0, 0.4);
+            /* 3d透视 表示人眼距离平面的距离 */
+            perspective: 1000px;
+            /* 设置3d属性 */
+            transform-style: preserve-3d;
+        }
+
+        .child:first-child {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0, 255, 0, 0.4);
+            transform: translateZ(-100px);
+        }
+
+        .child:last-child {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0, 0, 255, 0.4);
+            transform: translateZ(100px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <div class="child">远</div>
+        <div class="child">近</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            /* 定位元素不会收伸缩布局的影响 */
+            /* position: fixed;
+            left: 0;
+            top: 0; */
+            width: 100%;
+            height: 40px;
+            background-color: pink;
+        }
+
+        main {
+            /* 如果头部底部定了位会导致 box 主轴剩下部分内容 和主轴整个高度一样 main全屏
+            但是我们只需要main 是全屏-头部-底部  头部底部一定要在标准流占据 */
+            flex: 1;
+            background-color: skyblue;
+        }
+
+        footer {
+            width: 100%;
+            /* position: fixed;
+            left: 0;
+            bottom: 0; */
+            height: 50px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <header></header>
+        <main></main>
+        <footer></footer>
+    </div>
+</body>
+
+</html>

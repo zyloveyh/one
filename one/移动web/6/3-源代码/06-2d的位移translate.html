@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            background-color: #ccc;
+        }
+
+        .box1 .child1 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border: 1px solid red;
+            /* 如果使用margin 可以位移但是旁边兄弟也会跟着移动 */
+            margin-left: 100px;
+        }
+
+        .box2 {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            background-color: #ccc;
+        }
+
+        .box1 .child2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border: 1px solid red;
+        }
+
+        .box2 .child1 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border: 1px solid red;
+            /* 定位也可以移动但是会脱标  你跑了影响后面元素元素布局 如果只有一个子元素 父元素没有设置高度 撑不开父元素 */
+            position: absolute;
+            left: 500px;
+        }
+
+        .box2 .child2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border: 1px solid red;
+        }
+
+        .box3 {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            background-color: #ccc;
+        }
+
+        .box3 .child2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border: 1px solid red;
+        }
+
+        .box3 .child1 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border: 1px solid red;
+            /* 解决传统位移会影响到布局的问题 */
+            transform: translate(500px, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 位移 从一个地方 移动到另外一个地方
+    2. 传统的元素位移
+        1. margin
+        2. 定位
+    3. css3新增了translate 属性也可以设置位移
+        1. 位移了之后原来的 位置还在
+        2. 位移不会脱标 还是标准流元素 不会影响到后面页面布局 也会高度 -->
+    <div class="box1">
+        <div class="child1">一</div>
+        <div class="child2">二</div>
+    </div>
+    <div class="box2">
+        <div class="child1">一</div>
+        <div class="child2">二</div>
+    </div>
+    <div class="box3">
+        <div class="child1">111</div>
+        <div class="child2">222</div>
+    </div>
+</body>
+
+</html>

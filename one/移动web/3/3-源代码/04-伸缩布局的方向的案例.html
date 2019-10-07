@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            display: flex;
+            background-color: #ccc;
+            width: 300px;
+            height: 300px;
+        }
+        .box .left{
+            width: 100px;
+            height: 200px;
+            background-color: pink;
+            text-align: center;
+            line-height: 200px;
+        }
+        .box .right{
+            width: 100px;
+            height: 200px;
+            background-color: green;
+            /* 给右边进行上下 */
+            display: flex;
+            flex-direction: column;
+        }
+        /* 只要父元素设置了 display:flex就是让子元素为伸缩盒子 （伸缩盒子都是块级元素 可以设置宽高） */
+        .box .right a{
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="left">
+            左边的
+        </div>
+        <div class="right">
+            <a>右边上</a>
+            <a>右边下</a>
+        </div>
+    </div>
+</body>
+</html>

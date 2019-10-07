@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .em1 {
+            width: 10em;
+            height: 10em;
+            font-size: 40px;
+            background-color: #ccc;
+        }
+        .em2 {
+            /* 200/ 40 == 5em */
+            width: 5em;
+            height: 5em;
+            font-size: 80px;
+            background-color: #ccc;
+        }
+
+
+        html{
+            font-size: 20px;
+        }
+        .rem1 {
+            width: 10rem;
+            height: 10rem;
+            font-size: 1rem;
+            background-color: pink;
+        }
+        .rem2 {
+            width: 10rem;
+            height: 10rem;
+            font-size: 2rem;
+            background-color: pink;
+        }
+        div{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    屏幕是300px的时候 em1 里面的文字大小20px em2 里面的文字大小 40px 但是盒子大小都是 400px  
+    屏幕是600px的时候 em1 里面的文字大小40px em2 里面的文字大小 80px 但是盒子大小都是 400px  
+    <div class="em1">
+        我是em1
+    </div>
+    <div class="em2">
+        我是em2
+    </div>
+    rem1 里面的文字大小20px rem2 里面的文字大小 40px 但是盒子大小都是 200px
+    <div class="rem1">
+        我是rem1
+    </div>
+    <div class="rem2">
+        我是rem2
+    </div>
+
+    因为em每个字体大小不一样 所以如果需要屏幕适配 需要变大变小 每个元素的字体大小都需要修改
+    但是rem 参照根元素 每个人包括每个元素字体大小都可以参照根元素字体大小 需要变大变形 只要需要改变根元素字体大小
+</body>
+
+</html>

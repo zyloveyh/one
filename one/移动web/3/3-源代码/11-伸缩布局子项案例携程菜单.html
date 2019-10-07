@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            display: flex;
+            margin: 5px;
+        }
+
+        .left {
+            flex: 1;
+            height: 100px;
+            background-color: olivedrab;
+            display: flex;
+            border-radius: 10px 0px 0px 10px;
+        }
+
+        .left a {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .right {
+            flex: 2;
+            height: 100px;
+            background-color: skyblue;
+            display: flex;
+            /* 为什么子元素高度会和父元素一样因为 默认情况下
+            align-items的值是stretch 表示侧轴拉伸 */
+            /* 当前主轴水平 侧轴就是 子元素在侧轴垂直拉伸 和right高度一样了 */
+            align-items: stretch;
+            border-radius: 0px 10px 10px 0px;
+        }
+
+        .right div {
+            flex: 1;
+            /* 为了让右边里面的2个子元素垂直平分 设置flex */
+            display: flex;
+            /* 垂直把方向改成column */
+            flex-direction: column;
+            border-left: 1px solid #fff;
+        }
+
+        .right div a {
+            /* 主轴平分 当前a父元素主轴是垂直轴 垂直平分 */
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .right div a:first-child {
+            border-bottom: 1px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left">
+            <a href="#">
+                机票
+            </a>
+        </div>
+        <div class="right">
+            <div class="right1">
+                <a href="#">
+                    火车票
+                </a>
+                <a href="#">
+                    特价机票
+                </a>
+            </div>
+            <div class="right2">
+                <a href="#">汽车票</a>
+                <a href="#">专车票</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        	 * {
+        	 	 margin: 0;
+        	 	 padding: 0;
+        	 	 list-style: none;
+        	 }
+
+        	 nav {
+        	 	 width: 800px;
+        	 	 height: 50px;
+        	 	 margin: 50px auto;
+        	 	 background-color: green;
+        	 }
+
+        	 nav li {
+        	 	 width: 100px;
+        	 	 height: 50px;
+        	 	 float: left;
+        	 	 position: relative;
+        	 	 transform-style: preserve-3d;
+        	 	 transition: all 1s linear;
+        	 	 cursor: pointer;
+        	 }
+
+        	 nav li span {
+        	 	 position: absolute;
+        	 	 width: 100px;
+        	 	 height: 50px;
+        	 	 text-align: center;
+        	 	 line-height: 50px;
+        	 	 display: block;
+        	 	 background-color: green;
+        	 }
+        	 nav li span:last-child{
+				 transform: translateZ(25px);
+        	 }
+        	 nav li span:first-child{
+        	 	 background-color: yellow;
+        	 	 transform: rotateX(90deg) translateZ(25px);
+        	 }
+
+        	 nav li:hover {
+        	 	 transform: rotateX(-90deg);
+        	 }
+        </style>
+    </head>
+    <body>
+
+         <nav>
+         	 <ul>
+         	 	<li>
+         	 		<span>web前端</span>
+         	 		<span>前端学院</span>
+         	 	</li>
+         	 	<li>
+         	 		<span>web前端</span>
+         	 		<span>前端学院</span>
+         	 	</li>
+         	 	<li>
+         	 		<span>web前端</span>
+         	 		<span>前端学院</span>
+         	 	</li>
+         	 </ul>
+         </nav>
+    </body>
+</html>

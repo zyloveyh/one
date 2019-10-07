@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background:#ccc url() 200px 200px ;
+            /* 过渡也是一样
+            transition: 过渡属性 过渡时间 过渡方式 过渡延迟 */
+
+        }
+
+        .box {
+            width: 300px;
+            height: 600px;
+            background-color: skyblue;
+        }
+
+        /* 当鼠标移动到盒子上的时候让里面的img 的right值修改为0 */
+        .box:hover img {
+            /* 所有变化了的属性宽高 位移 缩放等都可以过渡 */
+            right: 0px;
+            top: 500px;
+            width: 300px;
+            height: 300px;
+        }
+
+        img {
+            position: absolute;
+            right: 1300px;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            /* 表示你要设置过渡的属性 什么属性动了 就给设置什么属性过渡  谁要加过渡属性给谁加*/
+            /* transition-property: right; */
+            /* 表示所有属性 */
+            /* transition-property: all; */
+            /* 设置过渡的时间 */
+            /* transition-duration: 10s; */
+            /* transition-duration:2s; */
+            /* 过渡的方式很多方式 先快后慢 先慢后快等等 */
+            /* transition-timing-function:ease; */
+            /* transition-timing-function: linear; */
+            /* 延迟等待5s之后再进行过渡 */
+            /* transition-delay: 5s; */
+
+            /* transition: right 3s linear 1s; */
+            /* 如果有多个属性需要变化和过渡可以设置all 表示所有属性 */
+            transition: all 3s linear 1s;
+            /* 通常后面的两个值 速度 和 延迟会省略 */
+            transition: all 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./images/man.png" alt="">
+    </div>
+</body>
+
+</html>

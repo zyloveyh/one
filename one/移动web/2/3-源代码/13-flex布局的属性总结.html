@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    1. flex布局 分为子元素父元素 属性分为父元素(父容器)和子元素(子项目)
+    2. 父容器属性
+        1. display:flex; 只要要使用flex布局必须给父元素设置属性 才能让里面子元素按照伸缩布局方式显示
+        2. flex布局方向分为2种 水平和垂直 flex-direction改变主轴方向
+            row 水平   默认值
+            row-reverse 水平反方向
+            column 垂直
+            column-reverse 垂直反方向
+            改了主轴后 侧轴也会跟着变 跟主轴相反的
+        3. 主轴对齐方式 justify-content  
+            flex-start 主轴起点  默认
+            flex-end 主轴终点
+            center 主轴中间
+            space-between 主轴2端
+            space-around 主轴的四周环绕
+            主轴根据 flex-direction 来控制的 默认值水平 默认 justify-content  水平对齐
+            如果修改了主轴方向 justify-content  控制的对齐也会修改
+        4. align-items 侧轴对齐方式(单行)
+                flex-start 侧轴起点
+                flex-end 侧轴终点
+                center 侧轴居中
+                baseline 侧轴第一行文字基线 (子元素文字第一行文字大小不一样才能看出来)
+                stretch 默认 拉伸(子盒子不设置高度就会自动拉伸撑满盒子)
+        5. flex-wrap 换行
+            nowrap 不换行 默认值
+            wrap 换行
+            ***如果需要换行子元素要有宽度当放不下就换行
+        6. algin-content 多行情况下的侧轴的对齐方式
+            多行情况下 主轴是水平 设置align-content 控制垂直的多行对齐方式
+            flex-start 侧轴起点 
+            flex-end 侧轴终点
+            center 侧轴中间
+            space-between 侧轴2端
+            space-around 侧轴的四周环绕
+            stretch 拉伸 默认值
+
+
+</body>
+</html>

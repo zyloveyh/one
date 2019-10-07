@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 600px;
+            margin: 100px auto;
+            background-color: #ccc;
+            /* display: flex;
+            justify-content: center;
+            align-content: center; */
+        }
+        .child{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 100px;
+            height: 300px;
+            border:1px solid green;
+          
+        }
+        .child:last-child{
+            width: 100px;
+            height: 300px;
+            border:1px solid red;
+            /* 倾斜也是角度 正值往逆时针倾斜 负值往顺时针倾斜 */
+            transform: skew(30deg);
+            /* transform: skew(-30deg); */
+            transform-origin: left top;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+</body>
+</html>

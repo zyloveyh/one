@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        ul {
+            width: 600px;
+            height: 600px;
+            background-color: #ccc;
+            margin: 100px auto;
+            /* 伸缩布局 也叫flex 也有叫弹性布局 属性flex 给父元素设置属性为display: flex
+            就会让里面的所有子元素按照伸缩布局方式排列 */
+            /* 默认情况下 子元素沿着父元素主轴方向排列 
+            目前默认情况下主轴是水平 从左往右 */
+            display: flex;
+            /* 如果想要修改子元素排序方向可以通过属性来 给父元素设置 */
+            /* flex单词弹出伸缩的意思 direction单词是方向意思 */
+            /* flex-direction: row | row-reverse | column | column-reverse; */
+            /* 从左往右 */
+            /* flex-direction: row ; */
+
+            /* justify-content: flex-start | flex-end | center | space-between | space-around; */
+            /* 默认情况下子元素从左往右依次排列 通过jusify-content属性来修改元素在主轴的对齐方式 */
+            /* 水平左对齐 */
+            justify-content: flex-start;
+            /* 水平右对齐 */
+            justify-content: flex-end;
+            /* 水平居中对齐 */
+            justify-content: center;
+            /* 水平2端对齐 */
+            justify-content:  space-between;
+
+            /* 如果把主轴改成了垂直方向 下面这些属性 表示垂直居上 */
+            /* flex-direction: column; */
+            /* 垂直上对齐 */
+            /* justify-content: flex-start; */
+            /* 垂直下对齐 */
+            /* justify-content: flex-end; */
+            /* 垂直居中对齐 */
+            /* justify-content: center; */
+            /* 垂直2端对齐 */
+            /* justify-content:  space-between; */
+            /* 垂直方向四周环绕 子元素左右间距都一样 */
+            /* justify-content: space-around; */
+
+        }
+
+        li {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+
+</html>

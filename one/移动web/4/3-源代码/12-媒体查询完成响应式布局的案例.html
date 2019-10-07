@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 3个子盒子 屏幕宽度大于750 需要分成3列
+                 屏幕宽度小于750 需要分成1列 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box .child {
+            border: 1px solid red;
+            height: 100px;
+        }
+        /* 需要750以上每个子元素div宽度 33.33% */
+        @media(min-width:750px){
+            .box .child{
+                width: 33.33%;
+            }
+        }
+        /* 需要在750一下 每个子元素宽度 100% */
+        @media(max-width:750px){
+            .box .child{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="child">
+            1
+        </div>
+        <div class="child">
+            2
+        </div>
+        <div class="child">
+            3
+        </div>
+    </div>
+</body>
+
+</html>

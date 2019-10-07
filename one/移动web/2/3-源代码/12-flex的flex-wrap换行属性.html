@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        ul {
+            width: 600px;
+            height: 600px;
+            background-color: #ccc;
+            margin: 100px auto;
+            /* 伸缩布局 也叫flex 也有叫弹性布局 属性flex 给父元素设置属性为display: flex
+            就会让里面的所有子元素按照伸缩布局方式排列 */
+            /* 默认情况下 子元素沿着父元素主轴方向排列 
+            目前默认情况下主轴是水平 从左往右 */
+            display: flex;
+
+            flex-direction: row;
+            /* 伸缩布局还有一个特点所有子元素在主轴排列 不换行就算放不下了也不换行 */
+            /* 默认设置了flex换行为nowrap 不换行的意思 */
+            /* flex-wrap: nowrap; */
+            /* 把换行属性改成wrap可以换行 */
+            flex-wrap: wrap;
+            /* 什么时候换行,根据子元素宽度和父元素的宽度当子元素放不下的时候就会换行 */
+            /* 如果换行了想要调整多行子元素对齐方式可以 通过一个属性align-content 控制多行侧轴的对齐方式 */
+            align-content: flex-start;
+            /* align-content: flex-end; */
+            /* align-content: center; */
+            /* align-content: space-between; */
+            /* align-content: space-around; */
+            /* align-content: stretch; */
+        }
+
+        li {
+            width: 100px;
+            /* 一般如果需要换行设置宽度  可以是px 百分比 */
+            width: 25%;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1范德萨范德萨</li>
+        <li>2发生的范德萨</li>
+        <li>3发送到发送到</li>
+        <li>1范德萨范德萨</li>
+        <li>2发生的范德萨</li>
+        <li>3发送到发送到</li>
+        <li>1范德萨范德萨</li>
+        <li>2发生的范德萨</li>
+        <li>3发送到发送到</li>
+        <li>1范德萨范德萨</li>
+        <li>2发生的范德萨</li>
+        <li>3发送到发送到</li>
+        <li>1范德萨范德萨</li>
+        <li>2发生的范德萨</li>
+        <li>3发送到发送到</li>
+        <li>1范德萨范德萨</li>
+        <li>2发生的范德萨</li>
+        <li>3发送到发送到</li>
+        <li>1范德萨范德萨</li>
+        <li>2发生的范德萨</li>
+        <li>3发送到发送到</li>
+        <li>1范德萨范德萨</li>
+        <li>2发生的范德萨</li>
+        <li>3发送到发送到</li>
+    </ul>
+</body>
+
+</html>

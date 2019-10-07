@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    1. 完成移动web响应式布局
+    2.轮播图响应式切换  准备2张图 大图小图
+        大图在 小 中 大屏幕显示 超小隐藏 hidden-xs
+        小图  在 小 中 大 隐藏 超小显示 hidden-sm hidden-md hidden-lg
+    3. 特色介绍
+        1. 中大分为3列  col-md-4  小 分2列 col-sm-6  超小要隐藏 hidden-xs
+        2. 里面左右布局使用 bootstrap组件 媒体对象 （live server打开就不会掉线）
+    4. 立即预约
+        1. 左右浮动 容器也自带了清除浮动
+        2. 间距可能有多行使用padding设置间距
+    5. 商品
+        1. 标题使用列表 在一行显示 使用flex在一行显示  间距使用padding
+        2. 设置边框等
+        3. 内容里面使用栅格布局  中大 3列 col-md-4 小 2列 col-sm-6 超小 1列  col-xs-12(默认是12 可以省略)
+        4. 商品快的左右布局 左边自适应 右边固定宽度100px  使用flex布局
+        5. 左边里面 栅格嵌套 所有屏幕都是一半 使用col-xs-6
+        6. 左边盒子里面的2个右边文字居中 单独选中偶数
+        7. 右边合作 2行居中 伸缩布局居中
+        8. 小半圆使用伪元素
+        9. 红色 类名 图标直接使用伪元素加图标  使用编码 + 字体 
+    6. 新闻
+        1. 栅格布局 2 2 1 7 但是第一个没东西使用列偏移去掉第一个2 让第二列偏移2列 col-md-offset-2
+        2. 小 超小屏幕让图标横着排列单独设置这个屏幕媒体查询设置flex布局
+    7. 合作伙伴
+        1. 栅格系统嵌套 9   先分大3列 里面分小3列
+            大3列 在 中大的3列 小 2列 超小1列
+            col-md-4 col-sm-6 
+            小3列永远 3列 col-xs-4
+    8. bootstrap 3 和 4对比
+        1. 样式做了很多优化 （样式变美观了）
+        2. 代码 和 类名使用变简单（加入新的特性伸缩布局等） 
+        3. 栅格系统 有5种类名 col col-sm col-md col-lg col-xl
+        4. 使用flex布局 实现更多平分列 5 7 9 11等都可以
+    9. CSS3的等效果
+        1. 过渡 让动画从一个阶段到另外一个阶段慢慢过去 transition
+            通常写 all 和 时间
+        2. 2d转换  位移 缩放 旋转   
+        3. 2d转换 通过transform属性
+            tranlate
+            scale
+            rotate
+</body>
+</html>
